@@ -1,0 +1,164 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Creating &amp; Documenting Message Tickets</title>
+<style>
+:root{
+  --navy:#16324F; --blue:#2F6690; --light:#F4F7FA; --ink:#1D2733;
+  --muted:#66788A; --green:#2E7D5B; --amber:#A66A00; --red:#A33A3A;
+  --border:#D9E2EA; --white:#FFFFFF;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--ink);background:#eef3f7;line-height:1.55}
+.page{max-width:1050px;margin:0 auto;background:var(--white);min-height:100vh;box-shadow:0 0 24px rgba(0,0,0,.08)}
+header{background:var(--navy);color:white;padding:34px 42px}
+header .eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+h1{margin:.25rem 0 .35rem;font-size:34px;line-height:1.15}
+header p{margin:0;max-width:760px;color:#eaf1f7}
+main{padding:34px 42px 48px}
+.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 26px}
+.meta div{border:1px solid var(--border);border-radius:10px;padding:12px;background:var(--light)}
+.meta b{display:block;font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.06em;margin-bottom:2px}
+h2{color:var(--navy);margin:32px 0 12px;font-size:24px;border-bottom:2px solid var(--border);padding-bottom:7px}
+h3{color:var(--navy);margin:20px 0 8px}
+.callout{border-left:5px solid var(--blue);background:#F2F7FB;padding:14px 16px;border-radius:8px;margin:16px 0}
+.warning{border-left-color:var(--amber);background:#FFF8E7}
+.danger{border-left-color:var(--red);background:#FFF1F1}
+.success{border-left-color:var(--green);background:#EEF8F3}
+.steps{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:start;border:1px solid var(--border);border-radius:12px;padding:14px;background:#fff}
+.num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--navy);color:white;font-weight:700}
+.step h3{margin:0 0 4px;font-size:18px}
+.keyrow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0}
+.key{display:inline-flex;align-items:center;justify-content:center;min-width:74px;padding:8px 12px;border:2px solid #98A8B5;border-bottom-width:4px;border-radius:7px;background:#F8FAFC;font-weight:700;font-family:Consolas,monospace;color:#22313F}
+.flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin:18px 0}
+.flow .box{flex:1 1 150px;border:1px solid var(--border);border-radius:10px;padding:13px;background:var(--light);text-align:center;font-weight:600}
+.flow .arrow{align-self:center;font-size:24px;color:var(--blue)}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px}
+th,td{border:1px solid var(--border);padding:10px 12px;vertical-align:top}
+th{background:var(--navy);color:#fff;text-align:left}
+tr:nth-child(even) td{background:#fafcfd}
+.checklist{list-style:none;padding:0;margin:12px 0}
+.checklist li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid #eef2f5}
+.checklist li:before{content:"✓";position:absolute;left:4px;color:var(--green);font-weight:800}
+.script{background:#182736;color:#fff;border-radius:10px;padding:14px 16px;font-size:16px}
+.small{font-size:13px;color:var(--muted)}
+.footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+.badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#E8F0F6;color:var(--navy);font-weight:700;font-size:12px}
+@media(max-width:700px){
+  header,main{padding-left:20px;padding-right:20px}
+  h1{font-size:28px}.meta{grid-template-columns:1fr}.flow .arrow{display:none}
+}
+@media print{
+  body{background:white}.page{box-shadow:none;max-width:none}
+  header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .step,.callout,table{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+<div class="eyebrow">Spectrum Operator Standard Operating Procedure</div>
+<h1>Creating &amp; Documenting Message Tickets</h1>
+<p>A visual SOP for opening, completing, reviewing, documenting, editing, and filing Spectrum message tickets.</p>
+</header>
+<main>
+<div class="meta">
+  <div><b>SOP ID</b>SOP-02</div>
+  <div><b>Source</b>Revised Spectrum Manual — July 2023</div>
+  <div><b>Manual Area</b>Types of Messages / Message Ticket Documentation</div>
+</div>
+
+<section>
+<h2>Purpose</h2>
+<p>Use this procedure to create, complete, document, review, and file Spectrum message tickets accurately. This SOP also distinguishes ordinary message tickets, Announce Patch tickets, and Patch calls.</p>
+
+<div class="callout danger"><b>Accuracy is mandatory.</b> The manual states that confirmation of numbers, addresses, and names is mandatory because unclear or incorrect messages can delay assistance.</div>
+
+<h2>Visual Workflow</h2>
+<div class="flow">
+  <div class="box">Read account instructions</div><div class="arrow">→</div>
+  <div class="box">IF / ENTER MSG</div><div class="arrow">→</div>
+  <div class="box">Collect requested information</div><div class="arrow">→</div>
+  <div class="box">Set ER + FOR fields</div><div class="arrow">→</div>
+  <div class="box">Review</div><div class="arrow">→</div>
+  <div class="box">FILE</div>
+</div>
+
+<h2>Procedure A — Create a Standard Message Ticket</h2>
+<div class="steps">
+  <div class="step"><div class="num">1</div><div><h3>Check account instructions first</h3><p>Read the Information screens and follow the order requested by the account. Use <b>Page Up</b> or <b>Page Down</b> to review additional information pages.</p></div></div>
+  <div class="step"><div class="num">2</div><div><h3>Open the message ticket</h3><p>Press <b>IF/ENTER MSG</b>.</p><div class="keyrow"><span class="key">IF / ENTER MSG</span></div></div></div>
+  <div class="step"><div class="num">3</div><div><h3>Collect and enter the caller's information</h3><p>Follow the exact field order requested by the account. For two-page tickets, press <b>TAB</b> to move to the next page.</p><div class="keyrow"><span class="key">TAB</span></div></div></div>
+  <div class="step"><div class="num">4</div><div><h3>Mark routing information</h3><p>Where applicable, mark the <b>ER</b> field Y or N and enter <b>Ofc</b> or <b>O/C</b> in the <b>FOR</b> field so the dispatcher knows whether to hold or pass the message.</p></div></div>
+  <div class="step"><div class="num">5</div><div><h3>Review before filing</h3><p>Verify names, phone numbers, addresses, spelling, and the reason for the call. Write clearly and include who, what, when, and where.</p></div></div>
+  <div class="step"><div class="num">6</div><div><h3>File the ticket</h3><p>Press <b>FILE</b> when the ticket is complete.</p><div class="keyrow"><span class="key">FILE</span></div></div></div>
+</div>
+
+<h2>Writing Standard</h2>
+<table>
+<tr><th>Requirement</th><th>Manual guidance</th></tr>
+<tr><td>Voice</td><td>Write in first person as if the caller is writing the message: I, we, me, mine, my, our.</td></tr>
+<tr><td>Clarity</td><td>Use accurate grammar, correct spelling, and wording that is easy for the dispatcher/on-call/nurse to understand.</td></tr>
+<tr><td>Completeness</td><td>Include relevant who, what, when, and where details.</td></tr>
+<tr><td>Verification</td><td>Confirm names, telephone numbers, and addresses.</td></tr>
+</table>
+
+<h2>Procedure B — Announce Patch Ticket</h2>
+<div class="callout"><b>Announce Patch requires a ticket.</b> Open the message ticket and collect the account-requested information <i>before</i> Announce Patching.</div>
+<div class="flow">
+  <div class="box">Open ticket</div><div class="arrow">→</div>
+  <div class="box">Collect caller information</div><div class="arrow">→</div>
+  <div class="box">Announce Patch</div><div class="arrow">→</div>
+  <div class="box">Document *Patched / result</div><div class="arrow">→</div>
+  <div class="box">FILE</div>
+</div>
+<p>Patching directions may appear in the <b>Special Locate</b>, <b>On-Call Scheduler</b>, <b>Expanded Locate</b>, or account Information screens.</p>
+
+<h2>Procedure C — Patch Calls</h2>
+<div class="callout success"><b>Patch calls do not require a completed message ticket.</b> The manual instructs the operator to simply patch the caller to the client.</div>
+
+<h2>Side Documentation Examples</h2>
+<table>
+<tr><th>Code</th><th>Meaning</th></tr>
+<tr><td>*C/B MISSED CALL</td><td>Call back missed call</td></tr>
+<tr><td>*N/A</td><td>No answer</td></tr>
+<tr><td>*BKL NO ANSWR</td><td>Backline no answer</td></tr>
+<tr><td>*VM FULL</td><td>Unable to leave voicemail; voicemail full</td></tr>
+<tr><td>*CLR INSISTS ER</td><td>Caller insists emergency</td></tr>
+<tr><td>*2ND, 3RD CL</td><td>Second or third call</td></tr>
+<tr><td>*CANCEL MESSAGE</td><td>Cancellation</td></tr>
+<tr><td>*PATCHED</td><td>Caller was patched</td></tr>
+</table>
+
+<h2>Editing, Second Calls, and Cancellations</h2>
+<div class="callout warning"><b>Manual note:</b> the Copy/Save section is marked “SECTION BEING UPDATED.” Follow current supervisor/dispatcher direction if local practice differs.</div>
+<ul class="checklist">
+<li>Use SAVE to edit an undelivered message or place a message on the Incomplete stack.</li>
+<li>Press FILE after edits are complete.</li>
+<li>For a second or third call or a cancellation, the manual instructs creating a new ticket and adding side documentation such as *2ND, *3RD, or CANCEL.</li>
+<li>On a second call, always reconfirm the caller's phone number.</li>
+<li>Do not allow STAT/STEMI/ASAP-type calls to sit in the Incomplete stack; finish the ticket and alert the dispatcher.</li>
+</ul>
+
+<h2>Operator Check</h2>
+<ul class="checklist">
+<li>I read the account instructions before entering the ticket.</li>
+<li>I verified all names and numbers with the caller.</li>
+<li>I used the correct ER and FOR routing fields where required.</li>
+<li>I documented exceptions/patch results with side documentation.</li>
+<li>I reviewed the ticket before pressing FILE.</li>
+</ul>
+</section>
+
+<div class="footer">
+This SOP is a visual job aid derived from the uploaded Revised Spectrum Manual — July 2023. Account-specific instructions, Special Locate information, Active Alerts, and dispatcher direction take precedence when the manual says an account may have exceptions.
+</div>
+</main>
+</div>
+</body>
+</html>

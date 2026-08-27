@@ -1,0 +1,166 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Office Check-Out, On-Call &amp; Special Locate Updates</title>
+<style>
+:root{
+  --navy:#16324F; --blue:#2F6690; --light:#F4F7FA; --ink:#1D2733;
+  --muted:#66788A; --green:#2E7D5B; --amber:#A66A00; --red:#A33A3A;
+  --border:#D9E2EA; --white:#FFFFFF;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--ink);background:#eef3f7;line-height:1.55}
+.page{max-width:1050px;margin:0 auto;background:var(--white);min-height:100vh;box-shadow:0 0 24px rgba(0,0,0,.08)}
+header{background:var(--navy);color:white;padding:34px 42px}
+header .eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+h1{margin:.25rem 0 .35rem;font-size:34px;line-height:1.15}
+header p{margin:0;max-width:760px;color:#eaf1f7}
+main{padding:34px 42px 48px}
+.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 26px}
+.meta div{border:1px solid var(--border);border-radius:10px;padding:12px;background:var(--light)}
+.meta b{display:block;font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.06em;margin-bottom:2px}
+h2{color:var(--navy);margin:32px 0 12px;font-size:24px;border-bottom:2px solid var(--border);padding-bottom:7px}
+h3{color:var(--navy);margin:20px 0 8px}
+.callout{border-left:5px solid var(--blue);background:#F2F7FB;padding:14px 16px;border-radius:8px;margin:16px 0}
+.warning{border-left-color:var(--amber);background:#FFF8E7}
+.danger{border-left-color:var(--red);background:#FFF1F1}
+.success{border-left-color:var(--green);background:#EEF8F3}
+.steps{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:start;border:1px solid var(--border);border-radius:12px;padding:14px;background:#fff}
+.num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--navy);color:white;font-weight:700}
+.step h3{margin:0 0 4px;font-size:18px}
+.keyrow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0}
+.key{display:inline-flex;align-items:center;justify-content:center;min-width:74px;padding:8px 12px;border:2px solid #98A8B5;border-bottom-width:4px;border-radius:7px;background:#F8FAFC;font-weight:700;font-family:Consolas,monospace;color:#22313F}
+.flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin:18px 0}
+.flow .box{flex:1 1 150px;border:1px solid var(--border);border-radius:10px;padding:13px;background:var(--light);text-align:center;font-weight:600}
+.flow .arrow{align-self:center;font-size:24px;color:var(--blue)}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px}
+th,td{border:1px solid var(--border);padding:10px 12px;vertical-align:top}
+th{background:var(--navy);color:#fff;text-align:left}
+tr:nth-child(even) td{background:#fafcfd}
+.checklist{list-style:none;padding:0;margin:12px 0}
+.checklist li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid #eef2f5}
+.checklist li:before{content:"✓";position:absolute;left:4px;color:var(--green);font-weight:800}
+.script{background:#182736;color:#fff;border-radius:10px;padding:14px 16px;font-size:16px}
+.small{font-size:13px;color:var(--muted)}
+.footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+.badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#E8F0F6;color:var(--navy);font-weight:700;font-size:12px}
+@media(max-width:700px){
+  header,main{padding-left:20px;padding-right:20px}
+  h1{font-size:28px}.meta{grid-template-columns:1fr}.flow .arrow{display:none}
+}
+@media print{
+  body{background:white}.page{box-shadow:none;max-width:none}
+  header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .step,.callout,table{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+<div class="eyebrow">Spectrum Operator Standard Operating Procedure</div>
+<h1>Office Check-Out, On-Call &amp; Special Locate Updates</h1>
+<p>Procedure for office forwarding/check-out calls, collecting on-call information, updating Special Locate, and notifying the dispatcher.</p>
+</header>
+<main>
+<div class="meta">
+  <div><b>SOP ID</b>SOP-03</div>
+  <div><b>Source</b>Revised Spectrum Manual — July 2023</div>
+  <div><b>Manual Area</b>Office Check-Out / Special Locate / On-Call</div>
+</div>
+
+<section>
+<h2>Purpose</h2>
+<p>Use this procedure when an office calls to say its phones are being forwarded, the office is leaving for lunch/a meeting/the day/weekend, or the client provides on-call instructions that must be documented in Special Locate and communicated to the dispatcher.</p>
+
+<div class="callout success"><b>Before placing an office caller on hold:</b> the manual instructs operators to look at Caller ID because most offices can be identified by it.</div>
+
+<h2>Visual Workflow</h2>
+<div class="flow">
+  <div class="box">Office calls in</div><div class="arrow">→</div>
+  <div class="box">Identify checkout/forwarding status</div><div class="arrow">→</div>
+  <div class="box">Collect return + O/C details</div><div class="arrow">→</div>
+  <div class="box">Update Special Locate</div><div class="arrow">→</div>
+  <div class="box">Notify dispatcher</div>
+</div>
+
+<h2>Common Office Check-Out Language</h2>
+<table>
+<tr><th>What the client may say</th><th>Manual shorthand / action</th></tr>
+<tr><td>“Stepping out for lunch.”</td><td>OTL</td></tr>
+<tr><td>“Going into a meeting.”</td><td>C/F IN MTG TL [time]</td></tr>
+<tr><td>“We are forwarding the phones.” / “We are rolling the phones.” / “You have our phones.”</td><td>Document forwarding status and any time/on-call instructions provided.</td></tr>
+<tr><td>“Leaving for the day/weekend.”</td><td>GFD or GFWKND; update Special Locate accordingly.</td></tr>
+</table>
+
+<h2>Procedure A — Handle the Office Check-Out</h2>
+<div class="steps">
+  <div class="step"><div class="num">1</div><div><h3>Identify the office</h3><p>Check Caller ID before placing the call on hold.</p></div></div>
+  <div class="step"><div class="num">2</div><div><h3>Clarify the forwarding/check-out status</h3><p>Determine whether the office is stepping out temporarily, going into a meeting, forwarding phones, or leaving for the day/weekend.</p></div></div>
+  <div class="step"><div class="num">3</div><div><h3>Get the time frame</h3><p>Ask when the office will return or how long the temporary instruction is in effect, if the client provides or needs to provide a time frame.</p></div></div>
+  <div class="step"><div class="num">4</div><div><h3>Ask for call-handling instructions</h3><p>The office may give instructions for emergency versus routine calls and may identify who is on call.</p></div></div>
+</div>
+
+<h2>Procedure B — Collect On-Call Information</h2>
+<p>When the office provides on-call information, the manual says always obtain:</p>
+<ul class="checklist">
+<li>Name of the person, technician, or doctor on call.</li>
+<li>Start and end date/time for the on-call assignment.</li>
+<li>Name of the client who provided the on-call information.</li>
+</ul>
+
+<div class="callout warning"><b>If the instructions are in-depth or confusing:</b> alert the dispatcher. The manual says the dispatcher may have you transfer the client to them. Tell the client you will transfer them to the dispatcher who can better assist; the manual specifically says not to say “HOLD.”</div>
+
+<h2>Procedure C — Update Special Locate</h2>
+<p>The Special Locate contains short-term account information. The manual repeatedly stresses that operators must read it when taking calls because it can contain temporary patching, emergency, office-closure, and on-call instructions.</p>
+<div class="steps">
+  <div class="step"><div class="num">1</div><div><h3>Open Locate Edit</h3><p>Answer a call or display the account, then press <b>DELETE/LOCATE EDIT</b>.</p><div class="keyrow"><span class="key">LOCATE EDIT</span></div></div></div>
+  <div class="step"><div class="num">2</div><div><h3>Enter the current information</h3><p>Document the office status/on-call instruction in the approved short format.</p></div></div>
+  <div class="step"><div class="num">3</div><div><h3>File the update</h3><p>Press <b>FILE</b>. The manual notes the border will appear purple after the update.</p><div class="keyrow"><span class="key">FILE</span></div></div></div>
+</div>
+
+<h2>On-Call Locate Formats from the Manual</h2>
+<table>
+<tr><th>Situation</th><th>Format</th></tr>
+<tr><td>Medical on-call</td><td><b>DR (name) O/C TL (date)</b></td></tr>
+<tr><td>Doctor from another account</td><td><b>DR (name) O/C TL (date) * DISPLAY ACCT (number)***</b></td></tr>
+<tr><td>Refer another doctor's office number</td><td><b>DR (name) O/C TL (date) ***REFER (office number)***</b></td></tr>
+<tr><td>Other on-call</td><td><b>(name) O/C TL (date)</b> or <b>O/C: (name) TL (date)</b></td></tr>
+<tr><td>Backup</td><td><b>B/U: (name) TL (date)</b></td></tr>
+</table>
+
+<div class="callout danger"><b>Medical verification rule:</b> the manual says to verify the doctor is listed with contact information on screen. If the doctor is not listed, ask a dispatcher before disconnecting with the client. It also says never give out phone numbers unless the account clearly says “REFER” or “MGO.”</div>
+
+<h2>Dispatcher Notification</h2>
+<p>Whenever the office gives on-call instructions, notify the dispatcher of what the client advised and document those instructions in Special Locate.</p>
+
+<h2>Every-Call Locate Habit</h2>
+<div class="flow">
+  <div class="box">Answer call</div><div class="arrow">→</div>
+  <div class="box">Look at SPECIAL LOCATE</div><div class="arrow">→</div>
+  <div class="box">Follow temporary instructions</div>
+</div>
+<p>The manual warns that failing to follow Special Locate instructions can delay an emergency call-out.</p>
+
+<h2>Operator Check</h2>
+<ul class="checklist">
+<li>I checked Caller ID before placing an office caller on hold.</li>
+<li>I captured who is on call, the effective dates/times, and who provided the information.</li>
+<li>I documented the current instruction in Special Locate.</li>
+<li>I informed the dispatcher of the on-call instructions.</li>
+<li>I escalated confusing or incomplete instructions before disconnecting the client.</li>
+</ul>
+</section>
+
+<div class="footer">
+This SOP is a visual job aid derived from the uploaded Revised Spectrum Manual — July 2023. Account-specific instructions, Special Locate information, Active Alerts, and dispatcher direction take precedence when the manual says an account may have exceptions.
+</div>
+</main>
+</div>
+</body>
+</html>

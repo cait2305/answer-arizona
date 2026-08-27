@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Answering, Holding &amp; Transferring Calls</title>
+<style>
+:root{
+  --navy:#16324F; --blue:#2F6690; --light:#F4F7FA; --ink:#1D2733;
+  --muted:#66788A; --green:#2E7D5B; --amber:#A66A00; --red:#A33A3A;
+  --border:#D9E2EA; --white:#FFFFFF;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--ink);background:#eef3f7;line-height:1.55}
+.page{max-width:1050px;margin:0 auto;background:var(--white);min-height:100vh;box-shadow:0 0 24px rgba(0,0,0,.08)}
+header{background:var(--navy);color:white;padding:34px 42px}
+header .eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+h1{margin:.25rem 0 .35rem;font-size:34px;line-height:1.15}
+header p{margin:0;max-width:760px;color:#eaf1f7}
+main{padding:34px 42px 48px}
+.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 26px}
+.meta div{border:1px solid var(--border);border-radius:10px;padding:12px;background:var(--light)}
+.meta b{display:block;font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.06em;margin-bottom:2px}
+h2{color:var(--navy);margin:32px 0 12px;font-size:24px;border-bottom:2px solid var(--border);padding-bottom:7px}
+h3{color:var(--navy);margin:20px 0 8px}
+.callout{border-left:5px solid var(--blue);background:#F2F7FB;padding:14px 16px;border-radius:8px;margin:16px 0}
+.warning{border-left-color:var(--amber);background:#FFF8E7}
+.danger{border-left-color:var(--red);background:#FFF1F1}
+.success{border-left-color:var(--green);background:#EEF8F3}
+.steps{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:start;border:1px solid var(--border);border-radius:12px;padding:14px;background:#fff}
+.num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--navy);color:white;font-weight:700}
+.step h3{margin:0 0 4px;font-size:18px}
+.keyrow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0}
+.key{display:inline-flex;align-items:center;justify-content:center;min-width:74px;padding:8px 12px;border:2px solid #98A8B5;border-bottom-width:4px;border-radius:7px;background:#F8FAFC;font-weight:700;font-family:Consolas,monospace;color:#22313F}
+.flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin:18px 0}
+.flow .box{flex:1 1 150px;border:1px solid var(--border);border-radius:10px;padding:13px;background:var(--light);text-align:center;font-weight:600}
+.flow .arrow{align-self:center;font-size:24px;color:var(--blue)}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px}
+th,td{border:1px solid var(--border);padding:10px 12px;vertical-align:top}
+th{background:var(--navy);color:#fff;text-align:left}
+tr:nth-child(even) td{background:#fafcfd}
+.checklist{list-style:none;padding:0;margin:12px 0}
+.checklist li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid #eef2f5}
+.checklist li:before{content:"✓";position:absolute;left:4px;color:var(--green);font-weight:800}
+.script{background:#182736;color:#fff;border-radius:10px;padding:14px 16px;font-size:16px}
+.small{font-size:13px;color:var(--muted)}
+.footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+.badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#E8F0F6;color:var(--navy);font-weight:700;font-size:12px}
+@media(max-width:700px){
+  header,main{padding-left:20px;padding-right:20px}
+  h1{font-size:28px}.meta{grid-template-columns:1fr}.flow .arrow{display:none}
+}
+@media print{
+  body{background:white}.page{box-shadow:none;max-width:none}
+  header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .step,.callout,table{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+<div class="eyebrow">Spectrum Operator Standard Operating Procedure</div>
+<h1>Answering, Holding &amp; Transferring Calls</h1>
+<p>Step-by-step Spectrum procedure for answering a call, using Universal or Priority Hold, and transferring calls between consoles.</p>
+</header>
+<main>
+<div class="meta">
+  <div><b>SOP ID</b>SOP-01</div>
+  <div><b>Source</b>Revised Spectrum Manual — July 2023</div>
+  <div><b>Manual Area</b>Incoming Calls / Hold / Transfer</div>
+</div>
+
+<section>
+<h2>Purpose</h2>
+<p>Use this procedure to answer incoming calls in Spectrum, place callers on Universal or Priority Hold correctly, and transfer a caller to another agent console.</p>
+
+<div class="callout success"><b>Core rule:</b> The caller is not live when you first select a ringing TALK line. Press <b>ANSWER</b> to bring the caller live.</div>
+
+<h2>Visual Workflow</h2>
+<div class="flow">
+  <div class="box">RING on TALK line</div><div class="arrow">→</div>
+  <div class="box">Select TALK 1–4</div><div class="arrow">→</div>
+  <div class="box">Press ANSWER</div><div class="arrow">→</div>
+  <div class="box">Handle / Hold / Transfer</div><div class="arrow">→</div>
+  <div class="box">CLEAR when finished</div>
+</div>
+
+<h2>Procedure A — Answer an Incoming Call</h2>
+<div class="steps">
+  <div class="step"><div class="num">1</div><div><h3>Select the ringing line</h3><p>Press the corresponding <b>TALK 1–4</b> key. Spectrum displays the account screen; the caller is not live yet.</p><div class="keyrow"><span class="key">TALK 1–4</span></div></div></div>
+  <div class="step"><div class="num">2</div><div><h3>Bring the caller live</h3><p>Press <b>ANSWER</b>.</p><div class="keyrow"><span class="key">ANSWER</span></div></div></div>
+  <div class="step"><div class="num">3</div><div><h3>Use the required professional phrasing</h3><div class="script">“May I ask who is calling, please?”</div><p>The manual requires professional, polite, courteous wording and use of “please” and “thank you.”</p></div></div>
+  <div class="step"><div class="num">4</div><div><h3>Disconnect when complete</h3><p>Press <b>CLEAR</b> after the call is complete.</p><div class="keyrow"><span class="key">CLEAR</span></div></div></div>
+</div>
+
+<h2>Procedure B — Universal Hold</h2>
+<p><span class="badge">Universal Hold</span> makes the call available for pickup by all agents.</p>
+<div class="steps">
+  <div class="step"><div class="num">1</div><div><h3>Ask permission</h3><div class="script">“Can you hold, please.”</div><p>The manual also gives a modified account answer phrase: “Benjamin Franklin, this is ___ May I Place You on Hold?”</p></div></div>
+  <div class="step"><div class="num">2</div><div><h3>If the caller agrees</h3><p>Say “Thank you,” then press <b>HOLD</b>. The TALK key changes to a red HOLD state.</p><div class="keyrow"><span class="key">HOLD</span></div></div></div>
+  <div class="step"><div class="num">3</div><div><h3>If the caller declines</h3><p>Do not put the caller on hold. Take the call. If it is an account you are not trained to manage, tell the caller you will transfer them to someone who can assist.</p></div></div>
+</div>
+
+<h2>Procedure C — Priority Hold</h2>
+<div class="callout warning"><b>Priority Hold</b> is exclusive to the agent who initiated it. The manual states a console can have up to four Priority Holds or transferred calls at once and instructs operators not to place the same caller on Priority Hold more than two times during the same call.</div>
+<div class="flow">
+  <div class="box">Current caller</div><div class="arrow">→</div>
+  <div class="box">SHIFT + HOLD<br><span class="small">or ALT + HOLD</span></div><div class="arrow">→</div>
+  <div class="box">PHLD — exclusive to your console</div>
+</div>
+
+<h2>Procedure D — Transfer to Another Console</h2>
+<div class="steps">
+  <div class="step"><div class="num">1</div><div><h3>Start transfer</h3><p>Press <b>ALT + T</b> or choose the Transfer shortcut button.</p><div class="keyrow"><span class="key">ALT + T</span></div></div></div>
+  <div class="step"><div class="num">2</div><div><h3>Enter the station number</h3><p>Type the destination console. For a single-digit station, add a leading zero: Console 2 = <b>02</b>; Console 22 = <b>22</b>.</p></div></div>
+</div>
+
+<h3>Receiving a Transferred Call</h3>
+<table>
+<tr><th>Action</th><th>What it does</th></tr>
+<tr><td>Press the corresponding TALK key once</td><td>Selects the XFER call and opens the account screen; caller is not live yet.</td></tr>
+<tr><td>Press ANSWER</td><td>Brings the transferred caller live.</td></tr>
+<tr><td>Alternative</td><td>Press the corresponding TALK key a second time to bring the caller live.</td></tr>
+</table>
+
+<h2>Required Call Phrases</h2>
+<table>
+<tr><th>Situation</th><th>Manual phrase</th></tr>
+<tr><td>Opening</td><td>“May I ask who is calling, please?”</td></tr>
+<tr><td>Putting on hold</td><td>“Can you hold, please.”</td></tr>
+<tr><td>Returning from hold</td><td>“Thank you for waiting. May I help you?”</td></tr>
+<tr><td>Patch release</td><td>“One moment please while I connect you to __ (client’s name) __.”</td></tr>
+</table>
+
+<h2>Operator Check</h2>
+<ul class="checklist">
+<li>I selected the correct TALK line before pressing ANSWER.</li>
+<li>I asked permission before placing a caller on hold.</li>
+<li>I used Universal vs. Priority Hold intentionally.</li>
+<li>I used a two-digit station number when transferring.</li>
+<li>I used professional “please” and “thank you” phrasing.</li>
+</ul>
+</section>
+
+<div class="footer">
+This SOP is a visual job aid derived from the uploaded Revised Spectrum Manual — July 2023. Account-specific instructions, Special Locate information, Active Alerts, and dispatcher direction take precedence when the manual says an account may have exceptions.
+</div>
+</main>
+</div>
+</body>
+</html>
