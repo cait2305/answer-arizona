@@ -4729,7 +4729,7 @@
         EMPLOYEE LOGIN AND ADMIN EMPLOYEE MANAGEMENT
     */
 
-    const SUPABASE_EMPLOYEE_FUNCTION_URL = SUPABASE_URL + "/functions/v1/employee-admin";
+    const SUPABASE_EMPLOYEE_FUNCTION_URL = SUPABASE_URL + "/functions/v1/admin-employees";
 
     async function callEmployeeFunction(action, payload) {
         const sessionResult = await supabaseClient.auth.getSession();
