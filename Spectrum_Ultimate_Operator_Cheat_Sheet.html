@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spectrum Operator Ultimate Cheat Sheet</title>
+<style>
+:root{--navy:#17324d;--blue:#2f6e9d;--ink:#1f2b35;--muted:#66727e;--line:#d7e0e7;--soft:#f5f8fa;--warn:#fff5dc;--danger:#fff0f0;--green:#edf8f3}
+*{box-sizing:border-box}body{margin:0;background:#eaf0f4;color:var(--ink);font-family:Segoe UI,Arial,sans-serif}
+.sheet{max-width:1400px;margin:0 auto;background:#fff;min-height:100vh;padding:18px}
+.header{background:var(--navy);color:#fff;border-radius:14px;padding:18px 22px;display:flex;justify-content:space-between;gap:20px;align-items:end}
+.header h1{margin:0;font-size:30px;line-height:1.05}.header p{margin:5px 0 0;opacity:.9;font-size:14px}.tag{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;opacity:.85}
+.grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:12px;margin-top:12px}
+.card{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff;break-inside:avoid}.card h2{font-size:16px;margin:0 0 8px;color:var(--navy)}.card h3{font-size:13px;margin:9px 0 4px;color:var(--blue);text-transform:uppercase}
+ul{margin:6px 0 0;padding-left:18px}li{margin:3px 0;font-size:12.5px;line-height:1.35}.k{font-family:Consolas,monospace;background:#eef3f7;border:1px solid #d5e0e8;border-radius:5px;padding:1px 5px;font-weight:700;white-space:nowrap}
+.phrase{background:var(--soft);border-left:4px solid var(--blue);padding:7px 9px;margin:5px 0;border-radius:6px;font-size:12.5px;line-height:1.3}.warn{background:var(--warn)}.danger{background:var(--danger)}.green{background:var(--green)}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:6px}.flow div{background:var(--soft);border:1px solid var(--line);border-radius:7px;padding:7px;text-align:center;font-size:11.5px;font-weight:700}
+.small{font-size:11px;color:var(--muted);line-height:1.25}.priority{font-weight:800;color:#8c1d1d}.footer{margin-top:10px;border-top:2px solid var(--navy);padding-top:7px;display:flex;justify-content:space-between;gap:15px;font-size:10.5px;color:var(--muted)}.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:1000px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:700px){.grid,.two{grid-template-columns:1fr}.header{align-items:start;flex-direction:column}}
+@page{size:landscape;margin:.28in}
+@media print{body{background:white}.sheet{max-width:none;padding:0}.header{border-radius:0;padding:11px 14px}.header h1{font-size:24px}.grid{grid-template-columns:1.15fr 1fr 1fr;gap:7px;margin-top:7px}.card{padding:8px;border-radius:7px}.card h2{font-size:13.5px;margin-bottom:4px}.card h3{font-size:11px;margin:5px 0 2px}li,.phrase{font-size:9.5px;line-height:1.16}li{margin:1px 0}ul{margin:3px 0 0;padding-left:14px}.flow div{font-size:8.7px;padding:4px}.small,.footer{font-size:8.3px}.phrase{padding:4px 6px;margin:3px 0}}
+</style>
+</head>
+<body>
+<div class="sheet">
+<div class="header">
+<div><div class="tag">Answer Arizona • Spectrum Operator Quick Reference</div><h1>ULTIMATE 1-PAGE OPERATOR CHEAT SHEET</h1><p>Use account instructions first. If anything is unclear, ask the dispatcher before disconnecting.</p></div>
+<div class="small" style="color:#dce7ef;text-align:right">Based on Revised Spectrum Manual — July 2023<br>Quick reference only; account-specific instructions control.</div>
+</div>
+
+<div class="grid">
+
+<section class="card">
+<h2>1. EVERY CALL: CORE SEQUENCE</h2>
+<div class="flow"><div>1. Select<br><span class="k">TALK 1–4</span></div><div>2. Make live<br><span class="k">ANSWER</span></div><div>3. Read<br>Alerts + Locate</div><div>4. Handle<br>Per account</div><div>5. Verify + File<br><span class="k">FILE</span></div></div>
+<ul>
+<li><b>Always glance at ACTIVE ALERTS</b> and <b>SPECIAL LOCATE</b>.</li>
+<li>Use On-Call Scheduler / ELI when the account directs you there.</li>
+<li>Check for <b>IF Messages</b> while caller is still on the line.</li>
+<li>Never give out phone numbers unless account clearly says <b>REFER</b> or <b>MGO</b>.</li>
+</ul>
+<h3>Required phrases</h3>
+<div class="phrase">“May I ask who is calling, please?”</div>
+<div class="phrase">Hold: “Can you hold, please?” → Return: “Thank you for waiting. May I help you?”</div>
+<div class="phrase">Patch: “One moment please while I connect you to ___.”</div>
+<div class="phrase">Use “please” and “thank you.” Avoid “uh huh,” “what,” and “umm.”</div>
+</section>
+
+<section class="card">
+<h2>2. MESSAGE TICKETS: ACCURACY FIRST</h2>
+<ul>
+<li>Follow the account's requested ticket fields and order.</li>
+<li>Write clearly using <b>who, what, when, where</b>.</li>
+<li>Write in <b>first person</b>: “I… / My… / We…”</li>
+<li><b>Confirm names, phone numbers, addresses and other requested identifiers.</b></li>
+<li>Common side docs: <b>*N/A, *VM FULL, *2ND, *3RD CL, *CANCEL MESSAGE, *PATCHED</b>.</li>
+</ul>
+<div class="card danger" style="margin-top:8px">
+<h2 style="font-size:13px">STAT / STEMI / “PASS ASAP”</h2>
+<ul><li class="priority">STOP answering calls.</li><li class="priority">Finish the ticket immediately.</li><li class="priority">Alert dispatcher right away.</li><li class="priority">NEVER put these in Incomplete.</li></ul>
+</div>
+<h3>Incompletes</h3>
+<ul><li>Do not allow more than <b>3</b>. At 3, stop answering and finish/file them.</li><li><span class="k">ESC</span> twice to work through incomplete messages; finish → <span class="k">FILE</span>.</li></ul>
+</section>
+
+<section class="card">
+<h2>3. EMERGENCY VS. ROUTINE</h2>
+<div class="two">
+<div class="card green"><h3>Emergency</h3><ul><li>Cannot wait until office reopens.</li><li>Medical examples: hospital calls, medication reactions, allowed emergency RX, surgery cancellations.</li><li>All ER medical calls are passed to O/C doctor or nurse per account.</li></ul></div>
+<div class="card warn"><h3>Routine</h3><ul><li>Can wait for normal business hours.</li><li>Examples: billing, paperwork, insurance, appointments, referrals, directions.</li><li><b>RTN REF OFC:</b> refer to office hours; do not take routine after-hours message.</li></ul></div>
+</div>
+<div class="phrase">If caller is unsure: ask whether they need the on-call physician now or can wait until the office opens. If still unsure, ask dispatcher.</div>
+</section>
+
+<section class="card">
+<h2>4. HOLD & TRANSFER</h2>
+<h3>Universal Hold</h3>
+<ul><li>Ask permission first → <span class="k">HOLD</span>.</li><li>Can be picked up by other agents.</li></ul>
+<h3>Priority Hold</h3>
+<ul><li><span class="k">SHIFT + HOLD</span> or <span class="k">ALT + HOLD</span>.</li><li>Exclusive to your console; manual warns not to priority-hold same caller more than twice in one call.</li></ul>
+<h3>Transfer</h3>
+<ul><li><span class="k">ALT + T</span> / XFER → station.</li><li>Receiving agent selects with TALK; ANSWER or second TALK makes caller live.</li></ul>
+</section>
+
+<section class="card">
+<h2>5. PATCH / ANNOUNCE PATCH</h2>
+<h3>Patch</h3>
+<ul><li>Standard patch generally does <b>not</b> require message ticket.</li><li>Patch phrase → <span class="k">PATCH</span> → dial/hypertext → when ringing <span class="k">PATCH</span> → <span class="k">STATUS/CLEAR</span>.</li></ul>
+<h3>Announce Patch</h3>
+<ul><li><b>Open ticket first</b> and collect required information.</li><li>Call client/O/C, announce caller, connect if accepted.</li><li>Medical “Patch to Dr O/C” means <b>Announce Patch</b>.</li><li>Document <b>*PATCHED</b>; if no answer follow account N/A / LWTCAS / TVP instructions.</li></ul>
+</section>
+
+<section class="card danger">
+<h2>6. DUAL PATCH — RECOVERY PROCEDURE</h2>
+<div class="flow">
+  <div>1. Call caller back<br><span class="k">DIAL</span></div>
+  <div>2. Confirm caller<br>name + connect plan</div>
+  <div>3. Place caller<br>on PRIORITY HOLD</div>
+  <div>4. Call O/C<br>and announce caller</div>
+  <div>5. Connect<br><span class="k">PATCH ×2</span></div>
+</div>
+<ul>
+<li>Use Dual Patch when the operator failed to Patch or Announce Patch the caller to the On-Call.</li>
+<li>Call the caller back and confirm you have the correct person.</li>
+<li>Tell the caller you are going to connect them to the On-Call and ask them to stay on the line.</li>
+<li>Place caller on <b>PRIORITY HOLD</b>.</li>
+<li>Dial the On-Call, announce the caller, and get permission to connect.</li>
+<li>Press <span class="k">PATCH</span> twice, then <span class="k">STATUS/CLEAR</span>.</li>
+<li>Document <b>*PATCHED</b> in the FOR field / side documentation as instructed.</li>
+<li>If no answer, document <b>*N/A</b>; if voicemail is left for O/C to call the service, use <b>LWTCAS</b> per account instructions.</li>
+</ul>
+<div class="phrase"><b>Operator script:</b> “Hello, this is the answering service. Is this ___? I’m going to connect you to the On-Call, please stay on the line.”</div>
+</section>
+
+<section class="card">
+<h2>7. MEDICAL HIGH-YIELD RULES</h2>
+<ul>
+<li><b>Prescriptions:</b> account-specific. Some allow none; some emergency RX only.</li>
+<li>Possible exceptions: promised-but-not-called-in RX, seizure/BP/heart/diabetes meds, recent surgery, medication reaction.</li>
+<li>Unless account says otherwise, <b>do not take medication names, lab values, or test results</b>.</li>
+<li><b>Same-day cancellation:</b> general rule up to 2 hours after office opens.</li>
+<li>Cancellation ticket: name, phone, DOB, doctor, appointment date/time, reason.</li>
+<li><b>Always take early-morning surgery cancellations</b>; account instructions still control.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>8. HOSPITAL / CONSULT CALLS</h2>
+<ul>
+<li>Confirm whether it is a <b>PAGE</b> or <b>CONSULT</b>.</li>
+<li>Verify caller, hospital, callback number + extension, patient name/spelling, DOB, room/bed, MRN if requested.</li>
+<li>Verify patient doctor against the account; use doctor directory/dispatcher if needed.</li>
+<li>Consults: capture requesting doctor, urgency (routine/urgent/STAT), diagnosis/reason, and account-required fields.</li>
+<li><b>Verify everything</b>—incorrect data can delay care.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>9. OFFICE CHECK-OUT / ON-CALL CHANGES</h2>
+<ul>
+<li>Look at Caller ID before putting client on hold.</li>
+<li>Get: <b>who is O/C, start/end date & time, and name of client giving info</b>.</li>
+<li>Update Special Locate.</li>
+<li><b>Notify dispatcher</b> whenever office gives on-call instructions.</li>
+<li>If instructions are detailed/confusing, transfer client to dispatcher.</li>
+</ul>
+<div class="phrase">If you have a problem with on-call information, ask dispatcher before disconnecting the client.</div>
+</section>
+
+<section class="card">
+<h2>10. 2ND / 3RD CALLS & CANCELLATIONS</h2>
+<ul>
+<li>Create a <b>new message ticket</b> for 2nd call, 3rd call, or cancellation.</li>
+<li>Add <b>*2ND, *3RD CL, *CANCEL MESSAGE</b>.</li>
+<li>On a second call, <b>always reconfirm caller's phone number</b>.</li>
+<li>Use COPY workflow as instructed.</li>
+</ul>
+<div class="small">Manual marks this section as being updated; follow current supervisor/dispatcher direction if local procedure differs.</div>
+</section>
+
+<section class="card">
+<h2>11. SPECIAL SITUATIONS</h2>
+<ul>
+<li><b>Spanish:</b> check Account 0000 for on-duty “S”; transfer. If none, use Account 4444 Spanish Speaker locate/backup/translator steps.</li>
+<li><b>Relay caller:</b> speak directly to caller, slowly and clearly; use “GO AHEAD” protocol as instructed.</li>
+<li><b>Triage nurse checking in:</b> transfer to dispatcher immediately.</li>
+<li><b>System offline/retry:</b> handwrite messages, note account number, alert dispatcher immediately for emergencies, enter messages when system returns.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>12. BEFORE YOU DISCONNECT</h2>
+<ul>
+<li>Did I follow the <b>account-specific instructions</b>?</li>
+<li>Did I check <b>Special Locate / Active Alerts / Scheduler / ELI</b> as needed?</li>
+<li>Did I classify <b>emergency vs routine</b> correctly?</li>
+<li>Did I verify <b>name, phone, spelling, address/DOB/room</b> as required?</li>
+<li>Did I use the correct <b>FOR field / relay / side documentation</b>?</li>
+<li>If unclear, did I <b>ask dispatcher before disconnecting</b>?</li>
+</ul>
+</section>
+
+<section class="card danger">
+<h2>13. DISPATCHER NOW</h2>
+<ul>
+<li><b>STAT / STEMI / nurse or doctor says ASAP.</b></li>
+<li>Emergency call and instructions are unclear.</li>
+<li>On-call info is missing, conflicting, or confusing.</li>
+<li>Triage nurse checks in.</li>
+<li>Priority situation identified by account/manual.</li>
+<li>Caller/client request falls outside your authority or you are unsure.</li>
+</ul>
+</section>
+
+</div>
+<div class="footer"><div><b>Golden Rule:</b> Account-specific instructions control. This cheat sheet supports memory; it does not replace the account screen.</div><div>Print in landscape for best one-page fit.</div></div>
+</div>
+</body>
+</html>
