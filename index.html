@@ -5534,20 +5534,12 @@
         message.textContent = "Verifying credentials...";
 
         try {
-            // Query Supabase for the admin account
-            const result = await supabaseClient
-                .from("web_service_admin")
-                .select("id, username, password_hash")
-                .eq("username", enteredId)
-                .maybeSingle();
+            const result = await supabaseClient.rpc("verify_web_service_admin", {
+                entered_username: enteredId,
+                entered_password: enteredPassword
+            });
 
             if (result.error || !result.data) {
-                message.textContent = "ID or password not recognized.";
-                return;
-            }
-
-            // Check password (for now, simple comparison - in production use bcrypt)
-            if (enteredPassword !== result.data.password_hash) {
                 message.textContent = "ID or password not recognized.";
                 return;
             }
