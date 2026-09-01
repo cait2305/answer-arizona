@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Answer Arizona | Applicant Skills Assessment</title>
+
+  <style>
+    :root {
+      --navy: #15324a;
+      --navy-dark: #0e2639;
+      --teal: #1f8f8a;
+      --teal-dark: #17716d;
+      --teal-soft: #eaf7f6;
+      --gold: #e7b34b;
+      --ink: #20303d;
+      --muted: #667684;
+      --page: #f4f7f9;
+      --card: #ffffff;
+      --line: #dbe4e9;
+      --danger: #b93c3c;
+      --success: #246b52;
+      --shadow: 0 12px 30px rgba(21, 50, 74, 0.10);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(31,143,138,.08), transparent 34%),
+        var(--page);
+      line-height: 1.55;
+    }
+
+    /* Header styled to fit the Answer Arizona careers site */
+    .site-header {
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,.12);
+    }
+
+    .nav-wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: .2px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: .95rem;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,.9);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .phone-link {
+      font-weight: 700;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy) 58%, #1c5366);
+      color: #fff;
+      padding: 54px 16px 72px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      width: min(800px, 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 11px;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: #dff7f5;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+
+    .hero .subtitle {
+      margin: 14px auto 0;
+      max-width: 650px;
+      color: rgba(255,255,255,.84);
+      font-size: 1.06rem;
+    }
+
+    .skill-row {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .skill-pill {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(31,143,138,.22);
+      border: 1px solid rgba(158,232,227,.34);
+      color: #efffff;
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    main {
+      width: min(900px, calc(100% - 28px));
+      margin: -30px auto 70px;
+      position: relative;
+    }
+
+    .assessment-shell {
+      background: var(--card);
+      border: 1px solid rgba(219,228,233,.9);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .intro {
+      padding: 28px 30px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .intro h2 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.4rem;
+    }
+
+    .intro p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 660px;
+    }
+
+    .assessment-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .meta-badge {
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      border: 1px solid #cceae8;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: .84rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .progress-wrap {
+      margin-top: 22px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 7px;
+      font-size: .83rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .progress-track {
+      height: 8px;
+      border-radius: 999px;
+      background: #edf1f3;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), #40b7b0);
+      transition: width .25s ease;
+    }
+
+    form {
+      padding: 2px 30px 30px;
+    }
+
+    .section-heading {
+      margin: 32px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-number {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 10px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    .section-heading h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.18rem;
+    }
+
+    .section-heading span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 400;
+    }
+
+    fieldset.question {
+      margin: 0 0 22px;
+      padding: 0;
+      border: 0;
+      min-width: 0;
+      background: transparent;
+    }
+
+    fieldset.question:focus-within {
+      border: 0;
+      box-shadow: none;
+    }
+
+    .question legend {
+      width: 100%;
+      margin: 0;
+      padding: 0 0 12px;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .question-number {
+      color: var(--teal-dark);
+      margin: 0;
+    }
+
+    .question-text {
+      display: block;
+      min-width: 0;
+    }
+
+
+    .question-prompt {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 7px;
+      align-items: start;
+      width: 100%;
+    }
+
+    .question-number {
+      color: var(--teal-dark);
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .question-text {
+      min-width: 0;
+    }
+
+    .reference {
+      margin: 0 0 12px;
+      padding: 10px 12px;
+      border-left: 4px solid var(--teal);
+      border-radius: 7px;
+      background: var(--teal-soft);
+      color: #31525b;
+      font-weight: 700;
+    }
+
+    .answer-grid {
+      display: grid;
+      gap: 9px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fff;
+    }
+
+    label.answer {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      padding: 11px 12px;
+      border: 1px solid #dfe7eb;
+      border-radius: 11px;
+      cursor: pointer;
+      transition: .16s ease;
+      background: #fff;
+    }
+
+    label.answer:hover {
+      border-color: #a7d8d5;
+      background: #f8fdfd;
+    }
+
+    label.answer:has(input:checked) {
+      border-color: var(--teal);
+      background: var(--teal-soft);
+      box-shadow: inset 0 0 0 1px var(--teal);
+    }
+
+    .answer input {
+      margin-top: 4px;
+      accent-color: var(--teal);
+      transform: scale(1.08);
+    }
+
+    .choice-letter {
+      color: var(--navy);
+      font-weight: 800;
+      min-width: 18px;
+    }
+
+    .instructions-box {
+      margin: 26px 0 8px;
+      padding: 16px 18px;
+      border-radius: 13px;
+      background: #f8fafb;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .instructions-box strong {
+      color: var(--navy);
+    }
+
+    .form-actions {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .required-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .submit-btn,
+    .continue-btn {
+      appearance: none;
+      border: 0;
+      border-radius: 11px;
+      padding: 13px 22px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+    }
+
+    .submit-btn {
+      color: #fff;
+      background: var(--teal);
+      box-shadow: 0 7px 16px rgba(31,143,138,.2);
+    }
+
+    .submit-btn:hover,
+    .submit-btn:focus {
+      background: var(--teal-dark);
+      transform: translateY(-1px);
+    }
+
+    .submit-btn:disabled {
+      cursor: not-allowed;
+      opacity: .65;
+      transform: none;
+    }
+
+    .validation-message {
+      display: none;
+      margin: 20px 0 0;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #e6b9b9;
+      background: #fff5f5;
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .success-panel {
+      display: none;
+      text-align: center;
+      padding: 42px 28px 46px;
+    }
+
+    .success-icon {
+      width: 66px;
+      height: 66px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: #e8f7f0;
+      color: var(--success);
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .success-panel h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.7rem;
+    }
+
+    .success-panel p {
+      max-width: 600px;
+      margin: 10px auto 24px;
+      color: var(--muted);
+    }
+
+    .continue-btn {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .continue-btn:hover,
+    .continue-btn:focus {
+      background: var(--navy-dark);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      padding: 28px 16px 34px;
+      background: var(--navy-dark);
+      color: rgba(255,255,255,.72);
+      text-align: center;
+      font-size: .88rem;
+    }
+
+    @media (max-width: 760px) {
+      .nav-wrap {
+        min-height: 64px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 42px 16px 64px;
+      }
+
+      main {
+        margin-top: -22px;
+      }
+
+      .intro,
+      form {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .assessment-meta {
+        justify-content: flex-start;
+      }
+
+      fieldset.question {
+        padding: 0;
+      }
+
+      .form-actions {
+        align-items: stretch;
+      }
+
+      .submit-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="#" class="brand">Answer Arizona</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="phone-link" href="tel:6022641144">Call (602) 264-1144</a>
+        <a href="#">Home</a>
+        <a href="#">Careers</a>
+        <a href="#">Sales Inquiry</a>
+        <a href="#">Training</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Careers at Answer Arizona</div>
+      <h1>Applicant Skills Assessment</h1>
+      <p class="subtitle">
+        This brief assessment evaluates skills that are important for accurate,
+        professional call handling.
+      </p>
+
+      <div class="skill-row" aria-label="Skills assessed">
+        <span class="skill-pill">Accuracy</span>
+        <span class="skill-pill">Communication</span>
+        <span class="skill-pill">Critical Thinking</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="assessment-shell" id="assessmentShell">
+      <div id="assessmentContent">
+        <div class="intro">
+          <div class="intro-grid">
+            <div>
+              <h2>Before You Begin</h2>
+              <p>
+                Choose the single best answer for each question. Accuracy matters.
+                Please complete all 15 questions before submitting. Your assessment
+                results will be reviewed by Answer Arizona and will not be displayed
+                after submission.
+              </p>
+            </div>
+
+            <div class="assessment-meta">
+              <span class="meta-badge">15 Questions</span>
+              <span class="meta-badge">Approx. 10 Minutes</span>
+            </div>
+          </div>
+
+          <div class="progress-wrap" aria-label="Assessment progress">
+            <div class="progress-label">
+              <span>Assessment progress</span>
+              <span id="progressText">0 of 15 answered</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+          </div>
+        </div>
+
+        <form id="assessmentForm" novalidate>
+
+          <!-- SECTION 1 -->
+          <div class="section-heading">
+            <div class="section-number">1</div>
+            <div>
+              <h3>Grammar &amp; Spelling</h3>
+              <span>Questions 1–5</span>
+            </div>
+          </div>
+
+          <fieldset class="question" data-question="1">
+            <legend><span class="question-prompt"><span class="question-number">1.</span><span class="question-text"><span class="question-text">Choose the sentence that correctly uses there/their/they’re.</span></span></span></legend>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q1" value="A"><span class="choice-letter">A.</span><span>Their calling because they're appointment is tomorrow.</span></label>
+              <label class="answer"><input type="radio" name="q1" value="B"><span class="choice-letter">B.</span><span>They're calling because their appointment is tomorrow.</span></label>
+              <label class="answer"><input type="radio" name="q1" value="C"><span class="choice-letter">C.</span><span>There calling because they're appointment is tomorrow.</span></label>
+              <label class="answer"><input type="radio" name="q1" value="D"><span class="choice-letter">D.</span><span>They're calling because there appointment is tomorrow.</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="2">
+            <legend><span class="question-prompt"><span class="question-number">2.</span><span class="question-text"><span class="question-text">Choose the correct word: Please do not ___ the patient's callback number.</span></span></span></legend>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q2" value="A"><span class="choice-letter">A.</span><span>loose</span></label>
+              <label class="answer"><input type="radio" name="q2" value="B"><span class="choice-letter">B.</span><span>lose</span></label>
+              <label class="answer"><input type="radio" name="q2" value="C"><span class="choice-letter">C.</span><span>loss</span></label>
+              <label class="answer"><input type="radio" name="q2" value="D"><span class="choice-letter">D.</span><span>loosen</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="3">
+            <legend><span class="question-prompt"><span class="question-number">3.</span><span class="question-text"><span class="question-text">Which sentence is spelled correctly?</span></span></span></legend>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q3" value="A"><span class="choice-letter">A.</span><span>The patient is experiencing severe abdominal pain.</span></label>
+              <label class="answer"><input type="radio" name="q3" value="B"><span class="choice-letter">B.</span><span>The patient is experincing severe abdominal pain.</span></label>
+              <label class="answer"><input type="radio" name="q3" value="C"><span class="choice-letter">C.</span><span>The patient is experiencing severe abdominul pain.</span></label>
+              <label class="answer"><input type="radio" name="q3" value="D"><span class="choice-letter">D.</span><span>The paitent is experiencing severe abdominal pain.</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="4">
+            <legend><span class="question-prompt"><span class="question-number">4.</span><span class="question-text"><span class="question-text">Which word correctly completes the sentence? The technician said the repair may ___ the entire system.</span></span></span></legend>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q4" value="A"><span class="choice-letter">A.</span><span>effect</span></label>
+              <label class="answer"><input type="radio" name="q4" value="B"><span class="choice-letter">B.</span><span>affect</span></label>
+              <label class="answer"><input type="radio" name="q4" value="C"><span class="choice-letter">C.</span><span>except</span></label>
+              <label class="answer"><input type="radio" name="q4" value="D"><span class="choice-letter">D.</span><span>accept</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="5">
+            <legend><span class="question-prompt"><span class="question-number">5.</span><span class="question-text"><span class="question-text">Choose the correct word to complete the sentence: The caller was told to leave a message and ___ wait for a return call.</span></span></span></legend>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q5" value="A"><span class="choice-letter">A.</span><span>than</span></label>
+              <label class="answer"><input type="radio" name="q5" value="B"><span class="choice-letter">B.</span><span>then</span></label>
+              <label class="answer"><input type="radio" name="q5" value="C"><span class="choice-letter">C.</span><span>them</span></label>
+              <label class="answer"><input type="radio" name="q5" value="D"><span class="choice-letter">D.</span><span>when</span></label>
+            </div>
+          </fieldset>
+
+          <!-- SECTION 2 -->
+          <div class="section-heading">
+            <div class="section-number">2</div>
+            <div>
+              <h3>Attention to Detail</h3>
+              <span>Questions 6–10</span>
+            </div>
+          </div>
+
+          <fieldset class="question" data-question="6">
+            <legend><span class="question-prompt"><span class="question-number">6.</span><span class="question-text"><span class="question-text">Maria Hernandez, callback 816-555-0147, says her father's oxygen machine is beeping. Which message is completely accurate?</span></span></span></legend>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q6" value="A"><span class="choice-letter">A.</span><span>Maria Fernandez — 816-555-0147 — Father's oxygen machine is beeping.</span></label>
+              <label class="answer"><input type="radio" name="q6" value="B"><span class="choice-letter">B.</span><span>Maria Hernandez — 816-555-0417 — Father's oxygen machine is beeping.</span></label>
+              <label class="answer"><input type="radio" name="q6" value="C"><span class="choice-letter">C.</span><span>Maria Hernandez — 816-555-0147 — Father's oxygen machine is beeping.</span></label>
+              <label class="answer"><input type="radio" name="q6" value="D"><span class="choice-letter">D.</span><span>Maria Hernandez — 816-555-0147 — Her oxygen machine is beeping.</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="7">
+            <legend><span class="question-prompt"><span class="question-number">7.</span><span class="question-text"><span class="question-text">Compare the original number. Which option matches exactly?</span></span></span></legend>
+            <div class="reference">Original: 402-555-7813</div>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q7" value="A"><span class="choice-letter">A.</span><span>402-555-7183</span></label>
+              <label class="answer"><input type="radio" name="q7" value="B"><span class="choice-letter">B.</span><span>402-555-7813</span></label>
+              <label class="answer"><input type="radio" name="q7" value="C"><span class="choice-letter">C.</span><span>402-555-7818</span></label>
+              <label class="answer"><input type="radio" name="q7" value="D"><span class="choice-letter">D.</span><span>402-555-8713</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="8">
+            <legend><span class="question-prompt"><span class="question-number">8.</span><span class="question-text"><span class="question-text">Which entry is an exact match?</span></span></span></legend>
+            <div class="reference">Original name: Kristin McAllister</div>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q8" value="A"><span class="choice-letter">A.</span><span>Kristen McAllister</span></label>
+              <label class="answer"><input type="radio" name="q8" value="B"><span class="choice-letter">B.</span><span>Kristin MacAllister</span></label>
+              <label class="answer"><input type="radio" name="q8" value="C"><span class="choice-letter">C.</span><span>Kristin McAllister</span></label>
+              <label class="answer"><input type="radio" name="q8" value="D"><span class="choice-letter">D.</span><span>Kristine McAllister</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="9">
+            <legend><span class="question-prompt"><span class="question-number">9.</span><span class="question-text"><span class="question-text">Which detail is missing from the shortened message?</span></span></span></legend>
+            <div class="reference">
+              Original: John Lee / 913-555-6621 / Water leaking from ceiling / 124 Pine St.<br>
+              Shortened message: John Lee / 913-555-6621 / 124 Pine St.
+            </div>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q9" value="A"><span class="choice-letter">A.</span><span>Caller name</span></label>
+              <label class="answer"><input type="radio" name="q9" value="B"><span class="choice-letter">B.</span><span>Callback number</span></label>
+              <label class="answer"><input type="radio" name="q9" value="C"><span class="choice-letter">C.</span><span>Call reason</span></label>
+              <label class="answer"><input type="radio" name="q9" value="D"><span class="choice-letter">D.</span><span>Address</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="10">
+            <legend><span class="question-prompt"><span class="question-number">10.</span><span class="question-text"><span class="question-text">The caller gives a home number of 816-555-0104 and a cell number of 816-555-0194 and specifically says, “Please call my cell.” Which number should be entered as the preferred callback number?</span></span></span></legend>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q10" value="A"><span class="choice-letter">A.</span><span>816-555-0104</span></label>
+              <label class="answer"><input type="radio" name="q10" value="B"><span class="choice-letter">B.</span><span>816-555-0194</span></label>
+              <label class="answer"><input type="radio" name="q10" value="C"><span class="choice-letter">C.</span><span>Both numbers with no preference</span></label>
+              <label class="answer"><input type="radio" name="q10" value="D"><span class="choice-letter">D.</span><span>Neither number</span></label>
+            </div>
+          </fieldset>
+
+          <!-- SECTION 3 -->
+          <div class="section-heading">
+            <div class="section-number">3</div>
+            <div>
+              <h3>Logic &amp; Reasoning</h3>
+              <span>Questions 11–15</span>
+            </div>
+          </div>
+
+          <fieldset class="question" data-question="11">
+            <legend><span class="question-prompt"><span class="question-number">11.</span><span class="question-text"><span class="question-text">Adams is on call from 5:00 PM–11:00 PM. Brooks is on call from 11:00 PM–7:00 AM. A call arrives at 11:30 PM. Who is on call?</span></span></span></legend>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q11" value="A"><span class="choice-letter">A.</span><span>Adams</span></label>
+              <label class="answer"><input type="radio" name="q11" value="B"><span class="choice-letter">B.</span><span>Brooks</span></label>
+              <label class="answer"><input type="radio" name="q11" value="C"><span class="choice-letter">C.</span><span>Both</span></label>
+              <label class="answer"><input type="radio" name="q11" value="D"><span class="choice-letter">D.</span><span>Neither</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="12">
+            <legend><span class="question-prompt"><span class="question-number">12.</span><span class="question-text"><span class="question-text">You paged the first on-call person at 8:05 PM. Instructions say to escalate if there is no response within 10 minutes. When should you escalate?</span></span></span></legend>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q12" value="A"><span class="choice-letter">A.</span><span>8:10 PM</span></label>
+              <label class="answer"><input type="radio" name="q12" value="B"><span class="choice-letter">B.</span><span>8:15 PM</span></label>
+              <label class="answer"><input type="radio" name="q12" value="C"><span class="choice-letter">C.</span><span>8:20 PM</span></label>
+              <label class="answer"><input type="radio" name="q12" value="D"><span class="choice-letter">D.</span><span>9:05 PM</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="13">
+            <legend><span class="question-prompt"><span class="question-number">13.</span><span class="question-text"><span class="question-text">Which sequence is in correct chronological order?</span></span></span></legend>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q13" value="A"><span class="choice-letter">A.</span><span>9:55 PM, 10:05 PM, 10:01 PM</span></label>
+              <label class="answer"><input type="radio" name="q13" value="B"><span class="choice-letter">B.</span><span>11:59 PM, 12:01 AM, 12:10 AM</span></label>
+              <label class="answer"><input type="radio" name="q13" value="C"><span class="choice-letter">C.</span><span>12:30 AM, 11:45 PM, 1:00 AM</span></label>
+              <label class="answer"><input type="radio" name="q13" value="D"><span class="choice-letter">D.</span><span>8:15 PM, 8:05 PM, 8:25 PM</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="14">
+            <legend><span class="question-prompt"><span class="question-number">14.</span><span class="question-text"><span class="question-text">An account has the following instructions. A caller reports that a broken pipe is actively flooding the basement. What should the operator do?</span></span></span></legend>
+            <div class="reference">
+              Active water leak → Page immediately<br>
+              Routine maintenance request → Hold for office hours<br>
+              Billing question → Email office
+            </div>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q14" value="A"><span class="choice-letter">A.</span><span>Hold the message for office hours.</span></label>
+              <label class="answer"><input type="radio" name="q14" value="B"><span class="choice-letter">B.</span><span>Email the office.</span></label>
+              <label class="answer"><input type="radio" name="q14" value="C"><span class="choice-letter">C.</span><span>Page immediately.</span></label>
+              <label class="answer"><input type="radio" name="q14" value="D"><span class="choice-letter">D.</span><span>Tell the caller to call back tomorrow.</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question" data-question="15">
+            <legend><span class="question-prompt"><span class="question-number">15.</span><span class="question-text"><span class="question-text">An account has the following instructions. A routine call comes in at 6:15 PM. What should the operator do?</span></span></span></legend>
+            <div class="reference">
+              Routine calls before 6:00 PM → Send to the office<br>
+              Routine calls after 6:00 PM → Hold for the next business day<br>
+              Urgent calls → Page at any time
+            </div>
+            <div class="answer-grid">
+              <label class="answer"><input type="radio" name="q15" value="A"><span class="choice-letter">A.</span><span>Page the on-call person.</span></label>
+              <label class="answer"><input type="radio" name="q15" value="B"><span class="choice-letter">B.</span><span>Send the call to the office immediately.</span></label>
+              <label class="answer"><input type="radio" name="q15" value="C"><span class="choice-letter">C.</span><span>Hold the message for the next business day.</span></label>
+              <label class="answer"><input type="radio" name="q15" value="D"><span class="choice-letter">D.</span><span>Treat the call as urgent because the office is closed.</span></label>
+            </div>
+          </fieldset>
+
+          <div class="instructions-box">
+            <strong>Before submitting:</strong> Review your answers carefully. In answering-service work,
+            names, phone numbers, instructions, and timing can all affect how a call is handled.
+          </div>
+
+          <div id="validationMessage" class="validation-message" role="alert">
+            Please answer all 15 questions before submitting the assessment.
+          </div>
+
+          <div class="form-actions">
+            <p class="required-note">All questions are required.</p>
+            <button type="submit" class="submit-btn" id="submitButton">Submit Assessment</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="success-panel" id="successPanel" aria-live="polite">
+        <div class="success-icon">✓</div>
+        <h2>Assessment Complete</h2>
+        <p>
+          Thank you for completing the Answer Arizona Applicant Skills Assessment.
+          Your responses have been recorded for company review. You may now continue
+          to the employment application.
+        </p>
+
+        <!-- Link back to index.html and show application section -->
+        <a href="index.html#application" class="continue-btn">Continue to Application</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Answer Arizona. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Initialize Supabase
+    const SUPABASE_URL = "https://ztgyjywfbaogvclqptfn.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_G25mEjcn_2PdsS6O8JxGtw_JcK-mkeV";
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    const form = document.getElementById('assessmentForm');
+    const progressText = document.getElementById('progressText');
+    const progressBar = document.getElementById('progressBar');
+    const validationMessage = document.getElementById('validationMessage');
+    const assessmentContent = document.getElementById('assessmentContent');
+    const successPanel = document.getElementById('successPanel');
+
+    const totalQuestions = 15;
+
+    /*
+      Correct answers are kept in JavaScript so the applicant does not see
+      a score on-screen. NOTE: Any client-side answer key can still be viewed
+      by a technically knowledgeable applicant through browser developer tools.
+
+      For a production hiring assessment, calculate/store the score on your
+      backend or serverless function if you want the answer key to be private.
+    */
+    const answerKey = {
+      q1: 'B',
+      q2: 'B',
+      q3: 'A',
+      q4: 'B',
+      q5: 'B',
+      q6: 'C',
+      q7: 'B',
+      q8: 'C',
+      q9: 'C',
+      q10: 'B',
+      q11: 'B',
+      q12: 'B',
+      q13: 'B',
+      q14: 'C',
+      q15: 'C'
+    };
+
+    function getAnsweredCount() {
+      let answered = 0;
+      for (let i = 1; i <= totalQuestions; i++) {
+        if (form.querySelector(`input[name="q${i}"]:checked`)) {
+          answered++;
+        }
+      }
+      return answered;
+    }
+
+    function updateProgress() {
+      const answered = getAnsweredCount();
+      const percent = Math.round((answered / totalQuestions) * 100);
+      progressText.textContent = `${answered} of ${totalQuestions} answered`;
+      progressBar.style.width = `${percent}%`;
+    }
+
+    form.addEventListener('change', updateProgress);
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const answered = getAnsweredCount();
+
+      if (answered !== totalQuestions) {
+        validationMessage.style.display = 'block';
+
+        // Find and focus the first unanswered question.
+        for (let i = 1; i <= totalQuestions; i++) {
+          const checked = form.querySelector(`input[name="q${i}"]:checked`);
+          if (!checked) {
+            const question = form.querySelector(`[data-question="${i}"]`);
+            question.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const firstRadio = question.querySelector('input[type="radio"]');
+            setTimeout(() => firstRadio.focus(), 400);
+            break;
+          }
+        }
+        return;
+      }
+
+      validationMessage.style.display = 'none';
+
+      let score = 0;
+      const responses = {};
+
+      for (let i = 1; i <= totalQuestions; i++) {
+        const selected = form.querySelector(`input[name="q${i}"]:checked`).value;
+        responses[`q${i}`] = selected;
+
+        if (selected === answerKey[`q${i}`]) {
+          score++;
+        }
+      }
+
+      // Section scores can be useful to reviewers.
+      const grammarScore =
+        ['q1','q2','q3','q4','q5'].filter(q => responses[q] === answerKey[q]).length;
+
+      const detailScore =
+        ['q6','q7','q8','q9','q10'].filter(q => responses[q] === answerKey[q]).length;
+
+      const logicScore =
+        ['q11','q12','q13','q14','q15'].filter(q => responses[q] === answerKey[q]).length;
+
+      const assessmentResult = {
+        score,
+        total: totalQuestions,
+        grammarScore,
+        detailScore,
+        logicScore,
+        responses,
+        submittedAt: new Date().toISOString()
+      };
+
+      // Save to Supabase
+      async function saveAssessment() {
+        try {
+          const { data, error } = await supabaseClient
+            .from('applicant_assessments')
+            .insert([{
+              score: assessmentResult.score,
+              grammar_score: assessmentResult.grammarScore,
+              detail_score: assessmentResult.detailScore,
+              logic_score: assessmentResult.logicScore,
+              responses: assessmentResult.responses,
+              submitted_at: assessmentResult.submittedAt
+            }]);
+
+          if (error) {
+            console.error('Supabase error:', error);
+          } else {
+            // Store assessment ID in sessionStorage for later use
+            sessionStorage.setItem('assessmentResult', JSON.stringify(assessmentResult));
+            
+            // Show success
+            assessmentContent.style.display = 'none';
+            successPanel.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        } catch (err) {
+          console.error('Error saving assessment:', err);
+          alert('Error saving assessment. Please try again.');
+        }
+      }
+
+      saveAssessment();
+    });
+
+    updateProgress();
+  </script>
+</body>
+</html>
