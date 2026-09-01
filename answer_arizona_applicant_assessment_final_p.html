@@ -835,8 +835,7 @@
           to the employment application.
         </p>
 
-        <!-- Link back to index.html and show application section -->
-        <a href="index.html#application" class="continue-btn">Continue to Application</a>
+        <a href="job_application_answerarizona.html" class="continue-btn">Continue to Application</a>
       </div>
     </section>
   </main>
@@ -858,6 +857,8 @@
     const validationMessage = document.getElementById('validationMessage');
     const assessmentContent = document.getElementById('assessmentContent');
     const successPanel = document.getElementById('successPanel');
+    const submitButton = document.getElementById('submitButton');
+    const requiredAnswersMessage = validationMessage.textContent.trim();
 
     const totalQuestions = 15;
 
@@ -906,12 +907,13 @@
 
     form.addEventListener('change', updateProgress);
 
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', async function(event) {
       event.preventDefault();
 
       const answered = getAnsweredCount();
 
       if (answered !== totalQuestions) {
+        validationMessage.textContent = requiredAnswersMessage;
         validationMessage.style.display = 'block';
 
         // Find and focus the first unanswered question.
@@ -929,6 +931,8 @@
       }
 
       validationMessage.style.display = 'none';
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
 
       let score = 0;
       const responses = {};
@@ -962,38 +966,31 @@
         submittedAt: new Date().toISOString()
       };
 
-      // Save to Supabase
-      async function saveAssessment() {
-        try {
-          const { data, error } = await supabaseClient
-            .from('applicant_assessments')
-            .insert([{
-              score: assessmentResult.score,
-              grammar_score: assessmentResult.grammarScore,
-              detail_score: assessmentResult.detailScore,
-              logic_score: assessmentResult.logicScore,
-              responses: assessmentResult.responses,
-              submitted_at: assessmentResult.submittedAt
-            }]);
+      try {
+        const { error } = await supabaseClient
+          .from('applicant_assessments')
+          .insert([{
+            score: assessmentResult.score,
+            grammar_score: assessmentResult.grammarScore,
+            detail_score: assessmentResult.detailScore,
+            logic_score: assessmentResult.logicScore,
+            responses: assessmentResult.responses,
+            submitted_at: assessmentResult.submittedAt
+          }]);
 
-          if (error) {
-            console.error('Supabase error:', error);
-          } else {
-            // Store assessment ID in sessionStorage for later use
-            sessionStorage.setItem('assessmentResult', JSON.stringify(assessmentResult));
-            
-            // Show success
-            assessmentContent.style.display = 'none';
-            successPanel.style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        } catch (err) {
-          console.error('Error saving assessment:', err);
-          alert('Error saving assessment. Please try again.');
-        }
+        if (error) throw error;
+
+        sessionStorage.setItem('assessmentResult', JSON.stringify(assessmentResult));
+        assessmentContent.style.display = 'none';
+        successPanel.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (error) {
+        console.error('Error saving assessment:', error);
+        validationMessage.textContent = `Unable to save your assessment: ${error.message}`;
+        validationMessage.style.display = 'block';
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit Assessment';
       }
-
-      saveAssessment();
     });
 
     updateProgress();
