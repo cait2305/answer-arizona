@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Answer Arizona — Employment Application</title>
+<style>
+:root{--navy:#0b2745;--teal:#138b8f;--blue:#1f5f99;--ink:#1f2937;--muted:#667085;--line:#d9e0e7;--bg:#f5f8fb;--white:#fff;--danger:#b42318;--ok:#067647}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.top{background:var(--navy);color:#fff;padding:22px 20px}.top-inner{max-width:1050px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.brand{font-size:1.55rem;font-weight:800;letter-spacing:.2px}.sub{opacity:.9;font-size:.95rem}.wrap{max-width:1050px;margin:28px auto;padding:0 18px 48px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 28px rgba(11,39,69,.07);padding:26px;margin-bottom:20px}.hero h1{margin:0 0 7px;color:var(--navy);font-size:2rem}.hero p{margin:.4rem 0}.notice{border-left:5px solid var(--teal);background:#eefafa;padding:14px 16px;border-radius:10px;margin-top:16px}.remote{border:2px solid var(--blue);background:#f1f7fd}.remote h2{color:var(--navy)}h2{margin:0 0 15px;font-size:1.35rem;color:var(--navy)}h3{margin:22px 0 10px;color:var(--blue);font-size:1.08rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.full{grid-column:1/-1}label{display:block;font-weight:700;font-size:.94rem;margin-bottom:6px}input,select,textarea{width:100%;padding:11px 12px;border:1px solid #bfc9d4;border-radius:8px;background:#fff;font:inherit;color:var(--ink)}textarea{min-height:105px;resize:vertical}.radio-row,.check-row{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:5px}.choice{display:flex;align-items:flex-start;gap:8px;font-weight:400}.choice input{width:auto;margin-top:4px}.section-note{font-size:.9rem;color:var(--muted);margin-top:-7px;margin-bottom:14px}.repeat{border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:14px;background:#fbfcfe}.lang-table{width:100%;border-collapse:collapse;margin-top:10px}.lang-table th,.lang-table td{border:1px solid var(--line);padding:9px;text-align:center}.lang-table th:first-child,.lang-table td:first-child{text-align:left}.lang-table input[type=radio]{width:auto}.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.btn{border:0;border-radius:10px;padding:12px 18px;font-weight:800;cursor:pointer;font-size:1rem}.primary{background:var(--teal);color:#fff}.secondary{background:#e9eef4;color:var(--navy)}.status{margin-top:12px;font-weight:700}.small{font-size:.86rem;color:var(--muted)}.required::after{content:' *';color:var(--danger)}.footer{text-align:center;color:var(--muted);font-size:.86rem;margin-top:24px}.hidden{display:none}.success{border-left:5px solid var(--ok);background:#ecfdf3;padding:16px;border-radius:10px;color:#05603a;font-weight:700}
+.preapp{border:2px solid var(--teal);background:#f7ffff}.preapp h2{color:var(--navy)}
+.step-label{display:inline-block;background:var(--navy);color:#fff;border-radius:999px;padding:5px 10px;font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:9px}
+.pre-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.pre-grid .full{grid-column:1/-1}
+.availability-box{border:1px solid var(--line);border-radius:12px;padding:15px;background:#fff}
+.pre-note{font-size:.9rem;color:var(--muted);margin-top:8px}
+@media(max-width:760px){.pre-grid{grid-template-columns:1fr}.pre-grid .full{grid-column:auto}}
+@media(max-width:760px){.grid,.grid3{grid-template-columns:1fr}.card{padding:19px}.hero h1{font-size:1.65rem}}
+@media print{body{background:#fff}.top,.actions,.footer{display:none}.wrap{max-width:none;margin:0;padding:0}.card{box-shadow:none;break-inside:avoid;border-radius:0}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-inner"><div><div class="brand">ANSWER ARIZONA</div><div class="sub">Pre-Application Questionnaire &amp; Employment Application</div></div><div class="sub">1990 W. Camelback Rd #106, Phoenix, AZ 85015<br>602-264-1144 · info@answerarizona.com</div></div></header>
+<main class="wrap">
+<section class="card hero">
+<h1>Pre-Application Questionnaire &amp; Employment Application</h1>
+<p>Thank you for your interest in Answer Arizona. Please complete the pre-application questionnaire first, followed by all applicable sections of the employment application.</p>
+<div class="notice">Answer Arizona considers applicants without regard to legally protected status. Employment decisions are based on job-related qualifications and business needs.</div>
+</section>
+
+
+<form id="applicationForm" novalidate>
+<section class="card preapp">
+<div class="step-label">Step 1 — Pre-Application Questionnaire</div>
+<h2>Pre-Application Questionnaire</h2>
+<p class="section-note">Please complete this questionnaire before continuing to the full employment application.</p>
+
+<div class="pre-grid">
+  <div><label class="required" for="preDate">Date</label><input id="preDate" name="pre_application_date" type="date" required></div>
+  <div><label class="required" for="preDayPhone">Your daytime (8:00 AM – 5:00 PM) telephone number</label><input id="preDayPhone" name="pre_daytime_phone" type="tel" required></div>
+
+  <div class="full"><label class="required">What type of work are you looking for?</label>
+    <div class="radio-row">
+      <label class="choice"><input type="radio" name="pre_work_time" value="Full Time" required>Full Time</label>
+      <label class="choice"><input type="radio" name="pre_work_time" value="Part Time">Part Time</label>
+    </div>
+  </div>
+
+  <div class="full"><label class="required">What type of job are you looking for?</label>
+    <div class="radio-row">
+      <label class="choice"><input type="radio" name="pre_job_type" value="Permanent" required>Permanent</label>
+      <label class="choice"><input type="radio" name="pre_job_type" value="Temporary">Temporary</label>
+    </div>
+  </div>
+
+  <div><label for="preTempUntil">If temporary, until what date can you work?</label><input id="preTempUntil" name="pre_temporary_until" type="date"></div>
+  <div><label class="required" for="preHoursWeek">How many hours per week are you available to work?</label><input id="preHoursWeek" name="pre_hours_per_week" type="number" min="1" max="168" required></div>
+
+  <div class="full availability-box">
+    <label>Please specify what hours you are NOT able to work:</label>
+    <div class="pre-grid">
+      <div class="full"><label for="preWeekdayUnavailable">Monday – Friday</label><input id="preWeekdayUnavailable" name="pre_unavailable_weekdays" placeholder="Enter unavailable hours, or None"></div>
+      <div><label for="preSaturdayUnavailable">Saturday</label><input id="preSaturdayUnavailable" name="pre_unavailable_saturday" placeholder="Unavailable hours, or None"></div>
+      <div><label for="preSundayUnavailable">Sunday</label><input id="preSundayUnavailable" name="pre_unavailable_sunday" placeholder="Unavailable hours, or None"></div>
+      <div class="full"><label for="preHolidayUnavailable">Holiday</label><input id="preHolidayUnavailable" name="pre_unavailable_holiday" placeholder="Unavailable hours, or None"></div>
+    </div>
+  </div>
+
+  <div class="full"><label class="required">Have you ever been an answering service operator?</label>
+    <div class="radio-row">
+      <label class="choice"><input type="radio" name="pre_answering_service_experience" value="Yes" required>Yes</label>
+      <label class="choice"><input type="radio" name="pre_answering_service_experience" value="No">No</label>
+    </div>
+  </div>
+  <div class="full"><label for="preAnsweringCompany">If yes, at which company?</label><input id="preAnsweringCompany" name="pre_answering_service_company"></div>
+
+  <div><label for="preTypingSpeed">What is your typing speed?</label><input id="preTypingSpeed" name="pre_typing_speed" placeholder="e.g., 55 WPM"></div>
+  <div><label for="preTypingTest">When was your last typing test?</label><input id="preTypingTest" name="pre_last_typing_test" placeholder="Date or approximate date"></div>
+
+  <div class="full"><label class="required">Are you at least 18 years old?</label>
+    <div class="radio-row">
+      <label class="choice"><input type="radio" name="pre_age_18" value="Yes" required>Yes</label>
+      <label class="choice"><input type="radio" name="pre_age_18" value="No">No</label>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="card">
+<div class="step-label">Step 2 — Employment Application</div>
+<h2>Continue to the Employment Application</h2>
+<p>The sections below contain the full Answer Arizona employment application.</p>
+</section>
+<section class="card">
+<h2>Applicant Information</h2>
+<div class="grid">
+<div><label class="required" for="date">Date of application</label><input id="date" name="date" type="date" required></div>
+<div><label class="required" for="position">Position(s) applied for</label><input id="position" name="position" required></div>
+<div class="full"><label>How did you hear about us?</label><div class="radio-row">
+<label class="choice"><input type="radio" name="referral" value="Advertisement">Advertisement</label><label class="choice"><input type="radio" name="referral" value="Friend">Friend</label><label class="choice"><input type="radio" name="referral" value="Relative">Relative</label><label class="choice"><input type="radio" name="referral" value="Walk-In">Walk-In</label><label class="choice"><input type="radio" name="referral" value="Employment Agency">Employment Agency</label><label class="choice"><input type="radio" name="referral" value="Other">Other</label></div></div>
+<div><label class="required" for="first">First name</label><input id="first" name="first_name" autocomplete="given-name" required></div>
+<div><label for="middle">Middle name</label><input id="middle" name="middle_name"></div>
+<div><label class="required" for="last">Last name</label><input id="last" name="last_name" autocomplete="family-name" required></div>
+<div><label class="required" for="phone">Telephone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+<div class="full"><label class="required" for="address">Street address</label><input id="address" name="address" autocomplete="street-address" required></div>
+<div><label class="required" for="city">City</label><input id="city" name="city" required></div><div><label class="required" for="state">State</label><input id="state" name="state" required></div><div><label class="required" for="zip">ZIP code</label><input id="zip" name="zip" inputmode="numeric" required></div>
+<div><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email"></div>
+<div class="full"><label>Are you available to work?</label><div class="check-row"><label class="choice"><input type="checkbox" name="availability" value="Full Time">Full Time</label><label class="choice"><input type="checkbox" name="availability" value="Part Time">Part Time</label><label class="choice"><input type="checkbox" name="availability" value="Temporary">Temporary</label></div></div>
+<div><label for="availableDate">Date available to start</label><input id="availableDate" name="available_date" type="date"></div>
+<div><label>Are you currently employed?</label><select name="currently_employed"><option value="">Choose…</option><option>Yes</option><option>No</option></select></div>
+<div><label>May we contact your current employer?</label><select name="contact_current_employer"><option value="">Choose…</option><option>Yes</option><option>No</option><option>N/A</option></select></div>
+<div><label>Have you applied here before?</label><select name="applied_before"><option value="">Choose…</option><option>Yes</option><option>No</option></select></div>
+<div><label>If yes, when?</label><input name="applied_before_date" type="text" placeholder="Approximate date"></div>
+<div><label>Have you worked here before?</label><select name="worked_before"><option value="">Choose…</option><option>Yes</option><option>No</option></select></div>
+<div><label>If yes, when?</label><input name="worked_before_date" type="text" placeholder="Approximate date"></div>
+<div class="full"><label>Are you legally authorized to work in the United States?</label><select name="work_authorization"><option value="">Choose…</option><option>Yes</option><option>No</option></select><div class="small">Proof of identity and employment authorization may be required upon employment.</div></div>
+<div class="full"><label>If under 18, can you furnish a work permit?</label><select name="work_permit"><option value="">Choose…</option><option>Yes</option><option>No</option><option>N/A</option></select></div>
+</div>
+</section>
+
+<section class="card remote">
+<h2>Remote Work Readiness</h2>
+<p class="section-note">Answer Arizona operators may perform their work remotely. Reliable attendance, a professional work environment, and the ability to protect callers from background noise and distractions are important.</p>
+<div class="grid">
+<div class="full"><label class="required">Do you have a quiet, private space where you can work your scheduled shifts without disruptive background noise or frequent interruptions?</label><div class="radio-row"><label class="choice"><input type="radio" name="quiet_space" value="Yes" required>Yes</label><label class="choice"><input type="radio" name="quiet_space" value="No">No</label></div></div>
+<div class="full"><label class="required">Are you comfortable working remotely and remaining focused and available throughout your scheduled shift?</label><div class="radio-row"><label class="choice"><input type="radio" name="remote_comfort" value="Yes" required>Yes</label><label class="choice"><input type="radio" name="remote_comfort" value="No">No</label></div></div>
+<div class="full"><label for="remoteExplain">Please briefly describe your remote-work setup and anything that could affect your ability to maintain a quiet professional environment during a shift.</label><textarea id="remoteExplain" name="remote_setup"></textarea></div>
+</div>
+</section>
+
+<section class="card">
+<h2>Languages</h2>
+<p class="section-note">List each language you speak, read, or write and indicate your level.</p>
+<div class="grid"><div><label for="language1">Language</label><input id="language1" name="language_1" placeholder="e.g., English, Spanish"></div><div><label for="language2">Additional language</label><input id="language2" name="language_2"></div></div>
+<table class="lang-table"><thead><tr><th>Ability</th><th>Fluent</th><th>Good</th><th>Fair</th></tr></thead><tbody>
+<tr><td>Speak</td><td><input type="radio" name="speak_level" value="Fluent"></td><td><input type="radio" name="speak_level" value="Good"></td><td><input type="radio" name="speak_level" value="Fair"></td></tr>
+<tr><td>Read</td><td><input type="radio" name="read_level" value="Fluent"></td><td><input type="radio" name="read_level" value="Good"></td><td><input type="radio" name="read_level" value="Fair"></td></tr>
+<tr><td>Write</td><td><input type="radio" name="write_level" value="Fluent"></td><td><input type="radio" name="write_level" value="Good"></td><td><input type="radio" name="write_level" value="Fair"></td></tr>
+</tbody></table>
+</section>
+
+<section class="card"><h2>Special Skills and Qualifications</h2><label for="skills">Summarize special skills and qualifications acquired through previous employment or other experience.</label><textarea id="skills" name="skills"></textarea></section>
+
+<section class="card"><h2>Education</h2><div class="repeat"><div class="grid3"><div><label>Type</label><select name="education_type_1"><option>High School</option><option>College/University</option><option>Graduate/Professional</option><option>Trade/Technical</option><option>Other</option></select></div><div><label>School name</label><input name="school_1"></div><div><label>Years completed</label><input name="years_1"></div><div><label>Diploma/Degree</label><input name="degree_1"></div><div class="full"><label>Course of study</label><input name="study_1"></div></div></div>
+<div class="repeat"><div class="grid3"><div><label>Type</label><select name="education_type_2"><option>College/University</option><option>Graduate/Professional</option><option>Trade/Technical</option><option>Other</option></select></div><div><label>School name</label><input name="school_2"></div><div><label>Years completed</label><input name="years_2"></div><div><label>Diploma/Degree</label><input name="degree_2"></div><div class="full"><label>Course of study</label><input name="study_2"></div></div></div>
+<h3>Additional education or training</h3><textarea name="additional_education" placeholder="Skills schools, trade schools, certifications, other education or training"></textarea></section>
+
+<section class="card"><h2>Employment Experience</h2><p class="section-note">Enter your most recent or last job first. Complete the requested information even if you also provide a résumé.</p>
+<div id="jobs"></div></section>
+
+<section class="card"><h2>Professional References</h2><p class="section-note">List three references who are not related to you and are not previous employers.</p><div id="refs"></div></section>
+
+<section class="card"><h2>Applicant Statement</h2>
+<p>I certify that the information provided in this application is true and complete to the best of my knowledge. I authorize Answer Arizona to investigate statements contained in this application as may be necessary in arriving at an employment decision.</p>
+<p>I understand that this application does not constitute an employment contract and that false or misleading information in my application or interview may affect employment. If employed, I understand that I am required to follow the employer's rules and regulations.</p>
+<div class="grid"><div><label class="required" for="printName">Type your full name</label><input id="printName" name="signature_name" required></div><div><label class="required" for="sigDate">Date</label><input id="sigDate" name="signature_date" type="date" required></div></div>
+<label class="choice" style="margin-top:14px"><input type="checkbox" id="certify" required>I certify that typing my name above represents my electronic acknowledgement of this application statement.</label>
+</section>
+
+<section class="card"><div class="actions"><button class="btn secondary" type="button" onclick="window.print()">Print / Save as PDF</button><button class="btn primary" type="submit">Review Application</button></div><div id="status" class="status"></div></section>
+</form>
+<section id="reviewCard" class="card hidden"><h2>Application Ready</h2><div class="success">Your application fields have been checked. Review your information carefully before using the employer's configured submission method.</div><p class="small">This standalone HTML version does not transmit applicant data anywhere until Answer Arizona connects the form to a secure form-processing service or server endpoint.</p><div class="actions"><button class="btn secondary" type="button" onclick="document.getElementById('reviewCard').classList.add('hidden');document.getElementById('applicationForm').scrollIntoView({behavior:'smooth'})">Return to Application</button></div></section>
+<div class="footer">Answer Arizona · Pre-Application Questionnaire &amp; Employment Application</div>
+</main>
+<script>
+const jobs=document.getElementById('jobs');
+for(let i=1;i<=4;i++)jobs.insertAdjacentHTML('beforeend',`<div class="repeat"><h3>Employer ${i}</h3><div class="grid"><div><label>Employer</label><input name="employer_${i}"></div><div><label>Telephone</label><input name="employer_phone_${i}" type="tel"></div><div class="full"><label>Address</label><input name="employer_address_${i}"></div><div><label>Dates of employment</label><input name="employment_dates_${i}" placeholder="MM/YYYY – MM/YYYY"></div><div><label>Job title</label><input name="job_title_${i}"></div><div><label>Starting hourly rate/salary</label><input name="start_pay_${i}"></div><div><label>Final hourly rate/salary</label><input name="final_pay_${i}"></div><div><label>Supervisor</label><input name="supervisor_${i}"></div><div class="full"><label>Reason for leaving</label><input name="reason_leaving_${i}"></div></div></div>`);
+const refs=document.getElementById('refs');
+for(let i=1;i<=3;i++)refs.insertAdjacentHTML('beforeend',`<div class="repeat"><h3>Reference ${i}</h3><div class="grid"><div><label>Name</label><input name="reference_name_${i}"></div><div><label>Telephone</label><input name="reference_phone_${i}" type="tel"></div><div><label>Relationship</label><input name="reference_relationship_${i}"></div><div><label>Address</label><input name="reference_address_${i}"></div></div></div>`);
+const today=new Date().toISOString().slice(0,10);document.getElementById('date').value=today;document.getElementById('sigDate').value=today;document.getElementById('preDate').value=today;
+document.getElementById('applicationForm').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.checkValidity()){document.getElementById('status').textContent='Please complete the required fields before continuing.';form.reportValidity();return;}document.getElementById('status').textContent='';document.getElementById('reviewCard').classList.remove('hidden');document.getElementById('reviewCard').scrollIntoView({behavior:'smooth',block:'start'});});
+</script>
+</body></html>
