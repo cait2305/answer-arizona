@@ -3789,8 +3789,8 @@
         <form onsubmit="webServiceAdminLoginSubmit(event)">
 
             <div class="form-group">
-                <label for="webServiceAdminId">ID</label>
-                <input type="text" id="webServiceAdminId" required>
+                <label for="webServiceAdminEmail">Email address</label>
+                <input type="email" id="webServiceAdminEmail" autocomplete="email" required>
             </div>
 
             <div class="form-group">
@@ -3843,11 +3843,10 @@
 
         <details class="trainer-settings" id="changePasswordSettings" style="margin-top: 20px;">
             <summary>Change Web Admin Password</summary>
-            <p>Update your web service admin password. Enter your current password and the new password you'd like to use.</p>
+            <p>Update the password for this web service admin account.</p>
             <div class="trainer-settings-row">
-                <input type="password" id="currentAdminPassword" placeholder="Current Password">
-                <input type="password" id="newAdminPassword" placeholder="New Password">
-                <input type="password" id="confirmAdminPassword" placeholder="Confirm New Password">
+                <input type="password" id="newAdminPassword" placeholder="New Password" autocomplete="new-password">
+                <input type="password" id="confirmAdminPassword" placeholder="Confirm New Password" autocomplete="new-password">
                 <button class="button" type="button" onclick="changeAdminPassword()">Change Password</button>
             </div>
             <p id="changePasswordStatus"></p>
@@ -5509,26 +5508,28 @@
         message.textContent = "Password recovery email sent. Check your inbox and spam folder.";
     }
 
-    // Web Service Admin credentials now stored securely in Supabase
     async function webServiceAdminLoginSubmit(event) {
 
         event.preventDefault();
 
-        const enteredId = document.getElementById("webServiceAdminId").value.trim();
+        const enteredEmail = document.getElementById("webServiceAdminEmail").value.trim();
         const enteredPassword = document.getElementById("webServiceAdminPassword").value;
         const message = document.getElementById("webServiceAdminLoginMessage");
 
-        message.textContent = "Verifying credentials...";
+        message.textContent = "Signing in...";
 
         try {
-            const result = await supabaseClient.rpc("verify_web_service_admin", {
-                entered_username: enteredId,
-                entered_password: enteredPassword
+            const loginResult = await supabaseClient.auth.signInWithPassword({
+                email: enteredEmail,
+                password: enteredPassword
             });
 
-            if (result.error || !result.data) {
-                message.textContent = "ID or password not recognized.";
-                return;
+            if (loginResult.error) throw loginResult.error;
+
+            const accessResult = await supabaseClient.rpc("is_web_service_admin");
+            if (accessResult.error || !accessResult.data) {
+                await supabaseClient.auth.signOut();
+                throw new Error("This account does not have web service administrator access.");
             }
 
             webServiceAdminLoggedIn = true;
@@ -5537,7 +5538,7 @@
             showPage("webServiceAdmin");
 
         } catch (err) {
-            message.textContent = "Error verifying credentials. Please try again.";
+            message.textContent = err.message || "Email or password not recognized.";
             console.error("Web admin login error:", err);
         }
 
@@ -7361,13 +7362,12 @@
     }
 
     async function changeAdminPassword() {
-        const currentPassword = document.getElementById("currentAdminPassword").value;
         const newPassword = document.getElementById("newAdminPassword").value;
         const confirmPassword = document.getElementById("confirmAdminPassword").value;
         const status = document.getElementById("changePasswordStatus");
 
-        if (!currentPassword || !newPassword || !confirmPassword) {
-            status.textContent = "Please fill in all three password fields.";
+        if (!newPassword || !confirmPassword) {
+            status.textContent = "Please fill in both password fields.";
             return;
         }
 
@@ -7384,30 +7384,21 @@
         status.textContent = "Updating password...";
 
         try {
-            const updateResult = await supabaseClient.rpc("change_web_service_admin_password", {
-                entered_username: "webadmin",
-                current_password: currentPassword,
-                new_password: newPassword
-            });
+            const updateResult = await supabaseClient.auth.updateUser({ password: newPassword });
 
             if (updateResult.error) {
                 status.textContent = "Error updating password. Please try again.";
                 return;
             }
 
-            if (!updateResult.data) {
-                status.textContent = "Current password is incorrect.";
-                return;
-            }
-
             status.textContent = "Password changed successfully. You will need to log in again with your new password.";
-            document.getElementById("currentAdminPassword").value = "";
             document.getElementById("newAdminPassword").value = "";
             document.getElementById("confirmAdminPassword").value = "";
 
             // Log out after 2 seconds
             setTimeout(function() {
                 webServiceAdminLoggedIn = false;
+                supabaseClient.auth.signOut();
                 showPage("home");
             }, 2000);
 
