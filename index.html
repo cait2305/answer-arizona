@@ -7394,38 +7394,22 @@
             return;
         }
 
-        status.textContent = "Verifying current password...";
+        status.textContent = "Updating password...";
 
         try {
-            // First, verify the current password is correct
-            const verifyResult = await supabaseClient
-                .from("web_service_admin")
-                .select("id, password_hash")
-                .eq("username", "webadmin")
-                .maybeSingle();
-
-            if (verifyResult.error || !verifyResult.data) {
-                status.textContent = "Error: Could not find admin account.";
-                return;
-            }
-
-            if (currentPassword !== verifyResult.data.password_hash) {
-                status.textContent = "Current password is incorrect.";
-                return;
-            }
-
-            // Update password
-            status.textContent = "Updating password...";
-            const updateResult = await supabaseClient
-                .from("web_service_admin")
-                .update({
-                    password_hash: newPassword,
-                    updated_at: new Date().toISOString()
-                })
-                .eq("username", "webadmin");
+            const updateResult = await supabaseClient.rpc("change_web_service_admin_password", {
+                entered_username: "webadmin",
+                current_password: currentPassword,
+                new_password: newPassword
+            });
 
             if (updateResult.error) {
                 status.textContent = "Error updating password. Please try again.";
+                return;
+            }
+
+            if (!updateResult.data) {
+                status.textContent = "Current password is incorrect.";
                 return;
             }
 
