@@ -3817,21 +3817,9 @@
             Developer settings for the email services this site uses. Not related to employee/company administration.
         </p>
 
-        <details class="trainer-settings" id="ackSettings">
-            <summary>Training acknowledgment email setup</summary>
-            <p>Module acknowledgments are emailed using a free EmailJS account (up to 200 emails/month at no cost). Create a service and template at <a href="https://www.emailjs.com/" target="_blank" rel="noopener">emailjs.com</a>, set the template's "To Email" to answerarizona1990@gmail.com, and enter the values below.</p>
-            <div class="trainer-settings-row">
-                <input type="text" id="ackPublicKey" placeholder="EmailJS Public Key">
-                <input type="text" id="ackServiceId" placeholder="EmailJS Service ID">
-                <input type="text" id="ackTemplateId" placeholder="EmailJS Template ID">
-                <button class="button" type="button" onclick="saveAckSettings()">Save</button>
-            </div>
-            <p id="ackSettingsStatus"></p>
-        </details>
-
         <details class="trainer-settings" id="salesEmailSettings" style="margin-top: 20px;">
             <summary>Sales Inquiry email setup</summary>
-            <p>Sales Inquiry submissions use their own free EmailJS service and template, separate from the training acknowledgment emails. Create a service and template at <a href="https://www.emailjs.com/" target="_blank" rel="noopener">emailjs.com</a>, set the template's "To Email" to answerarizona1990@gmail.com, and enter the values below.</p>
+            <p>Sales Inquiry submissions use EmailJS. Create a service and template at <a href="https://www.emailjs.com/" target="_blank" rel="noopener">emailjs.com</a>, set the template's "To Email" to answerarizona1990@gmail.com, and enter the values below.</p>
             <div class="trainer-settings-row">
                 <input type="text" id="salesPublicKey" placeholder="EmailJS Public Key">
                 <input type="text" id="salesServiceId" placeholder="EmailJS Service ID">
@@ -5326,7 +5314,6 @@
         }
 
         if (pageId === "webServiceAdmin") {
-            loadAckSettings();
             loadSalesEmailSettings();
             loadApplicationEmailSettings();
         }
