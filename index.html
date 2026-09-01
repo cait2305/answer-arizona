@@ -3179,10 +3179,10 @@
                 <label for="adminTrainingModule" style="display: block; margin-top: 16px;">Open a training module</label>
                 <select id="adminTrainingModule" onchange="if (this.value) openTrainingPage(this.value)" style="margin-top: 6px;">
                     <option value="">Select a module...</option>
-                    <option value="workFromHomeModule">Module 0: Work From Home</option>
-                    <option value="spectrumOrientationModule">Module 1: Spectrum Orientation &amp; Agent Console Sign-On</option>
-                    <option value="callHandlingModule">Module 2: Answering Calls, Answer Phrases &amp; Call Handling Standards</option>
-                    <option value="holdsTransfersModule">Module 3: Universal Hold, Priority Hold &amp; Transfers</option>
+                    <option value="module0Teamwork">Module 0: Teamwork</option>
+                    <option value="module1ASignOn">Module 1A: Spectrum Sign On &amp; Operator Statistics</option>
+                    <option value="module1BSignOff">Module 1B: Transfer Pendings &amp; Sign Off</option>
+                    <option value="module2CallHandling">Module 2: Answering Calls Correctly</option>
                 </select>
             </div>
         </div>
@@ -3272,10 +3272,10 @@
                         <label for="assignmentModule">Training module</label>
                         <select id="assignmentModule" required>
                             <option value="">Select one...</option>
-                            <option value="workFromHomeModule">Module 0: Work From Home</option>
-                            <option value="spectrumOrientationModule">Module 1: Spectrum Orientation &amp; Agent Console Sign-On</option>
-                            <option value="callHandlingModule">Module 2: Answering Calls, Answer Phrases &amp; Call Handling Standards</option>
-                            <option value="holdsTransfersModule">Module 3: Universal Hold, Priority Hold &amp; Transfers</option>
+                            <option value="module0Teamwork">Module 0: Teamwork</option>
+                            <option value="module1ASignOn">Module 1A: Spectrum Sign On &amp; Operator Statistics</option>
+                            <option value="module1BSignOff">Module 1B: Transfer Pendings &amp; Sign Off</option>
+                            <option value="module2CallHandling">Module 2: Answering Calls Correctly</option>
                         </select>
                     </div>
                 </div>
@@ -3460,10 +3460,10 @@
                 <label for="employeeTrainingModule">Choose a module</label>
                 <select id="employeeTrainingModule" onchange="if (this.value) openTrainingPage(this.value)" style="margin-top: 6px;">
                     <option value="">Select a module...</option>
-                    <option value="workFromHomeModule">Module 0: Work From Home</option>
-                    <option value="spectrumOrientationModule">Module 1: Spectrum Orientation &amp; Agent Console Sign-On</option>
-                    <option value="callHandlingModule">Module 2: Answering Calls, Answer Phrases &amp; Call Handling Standards</option>
-                    <option value="holdsTransfersModule">Module 3: Universal Hold, Priority Hold &amp; Transfers</option>
+                    <option value="module0Teamwork">Module 0: Teamwork</option>
+                    <option value="module1ASignOn">Module 1A: Spectrum Sign On &amp; Operator Statistics</option>
+                    <option value="module1BSignOff">Module 1B: Transfer Pendings &amp; Sign Off</option>
+                    <option value="module2CallHandling">Module 2: Answering Calls Correctly</option>
                 </select>
 
             </div>
@@ -3520,10 +3520,9 @@
             <thead>
                 <tr>
                     <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d2e0e5;">Employee</th>
-                    <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d2e0e5;">Patching</th>
-                    <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d2e0e5;">Handling Prescription Matters</th>
-                    <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d2e0e5;">Module 0: Work From Home</th>
-                    <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d2e0e5;">Module 1: Spectrum Orientation</th>
+                    <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d2e0e5;">Module 0: Teamwork</th>
+                    <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d2e0e5;">Module 1A: Sign On &amp; Statistics</th>
+                    <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d2e0e5;">Module 1B: Sign Off</th>
                     <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d2e0e5;">Module 2: Call Handling</th>
                 </tr>
             </thead>
@@ -4190,123 +4189,34 @@
     </section>
 
 
-    <!-- SPECTRUM ORIENTATION TRAINING MODULE -->
+    <!-- TRAINING MODULES -->
 
-    <section id="spectrumOrientationModule" class="page">
-
+    <section id="module0Teamwork" class="page">
         <div class="module">
-
-            <h1>Spectrum Orientation &amp; Agent Console Sign-On</h1>
-
-            <p style="margin: 10px 0 24px;">
-                Complete the interactive orientation lesson and final assessment below.
-            </p>
-
-            <div class="module-scroll-cue">
-                <button type="button" onclick="scrollTrainingModule('spectrumOrientationModule')">
-                    Scroll through lesson <span class="module-scroll-arrow" aria-hidden="true">&#8595;</span>
-                </button>
-            </div>
-
-            <iframe
-                class="patching-viewer"
-                data-module-src="Answer_Arizona_Module_01_Spectrum_Orientation_COMPLETE.html"
-                title="Spectrum Orientation and Agent Console Sign-On interactive training module"
-                allow="autoplay"
-            ></iframe>
-
+            <h1>Module 0: Teamwork</h1>
+            <iframe class="patching-viewer" data-module-src="module0_teamwork_with_narration_p.html" title="Module 0: Teamwork interactive training module" allow="autoplay"></iframe>
         </div>
-
     </section>
 
-
-    <!-- CALL HANDLING TRAINING MODULE -->
-
-    <section id="callHandlingModule" class="page">
-
+    <section id="module1ASignOn" class="page">
         <div class="module">
-
-            <h1>Answering Calls, Answer Phrases &amp; Call Handling Standards</h1>
-
-            <p style="margin: 10px 0 24px;">
-                Complete the interactive call-handling lesson and final assessment below.
-            </p>
-
-            <div class="module-scroll-cue">
-                <button type="button" onclick="scrollTrainingModule('callHandlingModule')">
-                    Scroll through lesson <span class="module-scroll-arrow" aria-hidden="true">&#8595;</span>
-                </button>
-            </div>
-
-            <iframe
-                class="patching-viewer"
-                data-module-src="Module_02_Call_Handling.html"
-                title="Answering Calls, Answer Phrases and Call Handling Standards interactive training module"
-                allow="autoplay"
-            ></iframe>
-
+            <h1>Module 1A: Spectrum Sign On &amp; Operator Statistics</h1>
+            <iframe class="patching-viewer" data-module-src="module1a_signon_opstats_with_narration_p.html" title="Module 1A: Spectrum Sign On and Operator Statistics interactive training module" allow="autoplay"></iframe>
         </div>
-
     </section>
 
-
-    <!-- HOLDS AND TRANSFERS TRAINING MODULE -->
-
-    <section id="holdsTransfersModule" class="page">
-
+    <section id="module1BSignOff" class="page">
         <div class="module">
-
-            <h1>Universal Hold, Priority Hold &amp; Transfers</h1>
-
-            <p style="margin: 10px 0 24px;">
-                Complete the interactive holds and transfers lesson and final assessment below.
-            </p>
-
-            <div class="module-scroll-cue">
-                <button type="button" onclick="scrollTrainingModule('holdsTransfersModule')">
-                    Scroll through lesson <span class="module-scroll-arrow" aria-hidden="true">&#8595;</span>
-                </button>
-            </div>
-
-            <iframe
-                class="patching-viewer"
-                data-module-src="Answer_Arizona_Module_03_Holds_Transfers_FINAL.html"
-                title="Universal Hold, Priority Hold and Transfers interactive training module"
-                allow="autoplay"
-            ></iframe>
-
+            <h1>Module 1B: Transfer Pendings &amp; Sign Off</h1>
+            <iframe class="patching-viewer" data-module-src="module1b_signoff_trainer_required_p.html" title="Module 1B: Transfer Pendings and Sign Off trainer-supervised training module"></iframe>
         </div>
-
     </section>
 
-
-    <!-- WORK FROM HOME TRAINING MODULE -->
-
-    <section id="workFromHomeModule" class="page">
-
+    <section id="module2CallHandling" class="page">
         <div class="module">
-
-            <h1>Work From Home</h1>
-
-            <p style="margin: 10px 0 24px;">
-                Complete the interactive Work From Home lesson and final assessment below.
-            </p>
-
-            <div class="module-scroll-cue">
-                <button type="button" onclick="scrollTrainingModule('workFromHomeModule')">
-                    Scroll through lesson <span class="module-scroll-arrow" aria-hidden="true">&#8595;</span>
-                </button>
-            </div>
-
-            <iframe
-                class="patching-viewer"
-                data-module-src="Answer_Arizona_Work_From_Home_Training_WITH_VIDEO_FINAL.html"
-                title="Work From Home interactive training module"
-                allow="autoplay"
-            ></iframe>
-
+            <h1>Module 2: Answering Calls Correctly</h1>
+            <iframe class="patching-viewer" data-module-src="module2_answering_calls_correctly_with_narration_p.html" title="Module 2: Answering Calls Correctly interactive training module" allow="autoplay"></iframe>
         </div>
-
     </section>
 
 
@@ -4886,7 +4796,7 @@
     }
 
     function openTrainingPage(pageId) {
-        const trainingPages = ["sop", "aiTrainer", "manual", "spectrumOrientationModule", "callHandlingModule", "holdsTransfersModule", "workFromHomeModule"];
+        const trainingPages = ["sop", "aiTrainer", "manual", "module0Teamwork", "module1ASignOn", "module1BSignOff", "module2CallHandling"];
         if (!trainingPages.includes(pageId)) return;
 
         const pageUrl = new URL(window.location.href);
@@ -4904,16 +4814,6 @@
         if (moduleFrame && !moduleFrame.src) {
             moduleFrame.src = moduleFrame.dataset.moduleSrc;
         }
-    }
-
-    function scrollTrainingModule(pageId) {
-        const moduleFrame = document.querySelector("#" + pageId + " iframe");
-        if (!moduleFrame || !moduleFrame.contentWindow) return;
-
-        moduleFrame.contentWindow.scrollBy({
-            top: Math.round(moduleFrame.clientHeight * 0.8),
-            behavior: "smooth"
-        });
     }
 
     function showPage(pageId) {
@@ -4934,7 +4834,7 @@
             pageId = "webServiceAdminLogin";
         }
 
-        if (pageId === "spectrumOrientationModule" || pageId === "callHandlingModule" || pageId === "holdsTransfersModule" || pageId === "workFromHomeModule") {
+        if (Object.prototype.hasOwnProperty.call(TRACKED_MODULES, pageId)) {
             loadTrainingModule(pageId);
             trackModuleOpen(pageId);
         }
@@ -7050,10 +6950,10 @@
     */
 
     const TRACKED_MODULES = {
-        workFromHomeModule: "Module 0: Work From Home",
-        spectrumOrientationModule: "Spectrum Orientation & Agent Console Sign-On",
-        callHandlingModule: "Module 2: Answering Calls, Answer Phrases & Call Handling Standards",
-        holdsTransfersModule: "Module 3: Universal Hold, Priority Hold & Transfers"
+        module0Teamwork: "Module 0: Teamwork",
+        module1ASignOn: "Module 1A: Spectrum Sign On & Operator Statistics",
+        module1BSignOff: "Module 1B: Transfer Pendings & Sign Off",
+        module2CallHandling: "Module 2: Answering Calls Correctly"
     };
 
     async function getModuleProgress(authUserId) {
@@ -7395,38 +7295,27 @@
 
     window.addEventListener("message", async function (event) {
         const data = event.data;
-        if (!data) return;
+        if (!data || data.type !== "answerArizonaModuleComplete") return;
 
-        if (data.type === "answerArizonaTrainingComplete" && data.module === "spectrum-orientation-sign-on") {
-            await trackModuleAcknowledged("spectrumOrientationModule", "Passed final assessment", data.score);
-            return;
-        }
+        const moduleKeyByCompletionId = {
+            "0": "module0Teamwork",
+            "1A": "module1ASignOn",
+            "1B": "module1BSignOff",
+            "2": "module2CallHandling"
+        };
+        const moduleKey = moduleKeyByCompletionId[String(data.module)];
+        if (!moduleKey) return;
 
-        if (data.type === "training-complete" && data.module === "answering-calls-call-handling") {
-            await trackModuleAcknowledged("callHandlingModule", "Passed final assessment", data.score);
-            return;
-        }
-
-        if (data.type === "training-complete" && data.module === "universal-priority-hold-transfers") {
-            await trackModuleAcknowledged("holdsTransfersModule", "Passed final assessment", data.score);
-            return;
-        }
-
-        if (data.type === "answerArizonaTrainingComplete" && data.module === "work-from-home") {
-            await trackModuleAcknowledged("workFromHomeModule", "Passed final assessment", data.score);
-            return;
-        }
-
+        await trackModuleAcknowledged(
+            moduleKey,
+            moduleKey === "module1BSignOff" ? "Completed with trainer" : "Passed final assessment",
+            typeof data.score === "number" ? data.score : undefined
+        );
     });
 
     async function restoreSessionAndPage() {
         const requestedPage = window.location.hash.slice(1);
         if (!requestedPage) return;
-
-        const trainingModules = ["spectrumOrientationModule", "callHandlingModule", "holdsTransfersModule", "workFromHomeModule"];
-        if (trainingModules.includes(requestedPage)) {
-            loadTrainingModule(requestedPage);
-        }
 
         try {
             const sessionResult = await supabaseClient.auth.getSession();
