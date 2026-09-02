@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Answer Arizona SOP — Cross Talk</title>
+<style>
+:root{
+  --navy:#062d56;
+  --navy2:#0a3b70;
+  --teal:#0d8e9c;
+  --ink:#172334;
+  --muted:#5f6f82;
+  --bg:#eef4f8;
+  --card:#ffffff;
+  --line:#d5e0e8;
+  --red:#b91c1c;
+  --redbg:#fff1f2;
+  --green:#147a3d;
+  --greenbg:#eefbf3;
+  --bluebg:#eef5ff;
+  --shadow:0 10px 28px rgba(10,40,70,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+}
+.topbar{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+  padding:18px 24px;
+}
+.brand{
+  max-width:1050px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.brandMark{
+  width:48px;height:48px;border-radius:12px;
+  background:linear-gradient(145deg,var(--navy),var(--teal));
+  color:#fff;display:grid;place-items:center;
+  font-weight:900;font-size:18px;
+}
+.brandText b{display:block;color:var(--navy);font-size:20px}
+.brandText span{
+  display:block;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:12px;
+}
+.wrap{max-width:1050px;margin:26px auto;padding:0 18px 36px}
+.hero,.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:26px;
+  margin-bottom:18px;
+}
+.eyebrow{
+  color:var(--teal);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:900;
+  font-size:13px;
+}
+h1,h2{color:var(--navy);line-height:1.2}
+h1{font-size:34px;margin:.25em 0 .2em}
+h2{font-size:23px;margin:0 0 12px}
+.lead{font-size:18px;color:#385066;margin-bottom:0}
+.meta{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  border:1px solid var(--line);
+  background:var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  margin-top:20px;
+}
+.meta div{background:#fff;padding:10px 12px}
+.meta strong{display:block;color:var(--navy);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.warning{
+  border:2px solid var(--red);
+  background:var(--redbg);
+  color:#7c1616;
+  padding:18px;
+  border-radius:14px;
+  font-weight:800;
+}
+.warning strong{color:var(--red)}
+.steps{display:grid;gap:11px}
+.step{
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:12px;
+  align-items:start;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:14px;
+  background:#fbfdff;
+}
+.stepNum{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--navy);color:#fff;
+  display:grid;place-items:center;font-weight:900;
+}
+.step b{color:var(--navy)}
+.flow{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+}
+.flowBox{
+  border:2px solid var(--teal);
+  background:var(--bluebg);
+  color:var(--navy);
+  font-weight:900;
+  padding:11px 13px;
+  border-radius:12px;
+  text-align:center;
+}
+.arrow{font-size:24px;color:var(--teal);font-weight:900}
+table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:12px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:11px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:var(--navy);color:#fff}
+.doHead{background:var(--green)!important}
+.dontHead{background:var(--red)!important}
+.doCell{background:var(--greenbg)}
+.dontCell{background:var(--redbg)}
+.memory{
+  background:linear-gradient(180deg,#f0fbf4,#fff);
+  border:2px solid #79c995;
+  border-radius:15px;
+  padding:18px;
+}
+.memory strong{color:var(--green)}
+.footer{
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:24px;
+}
+@media(max-width:760px){
+  .meta{grid-template-columns:1fr 1fr}
+  .hero,.card{padding:19px}
+  h1{font-size:28px}
+  .flow{align-items:stretch}
+  .flowBox{width:100%}
+  .arrow{transform:rotate(90deg);margin:auto}
+}
+@media print{
+  body{background:#fff}
+  .topbar{box-shadow:none}
+  .hero,.card{box-shadow:none;break-inside:avoid}
+  .wrap{max-width:none;margin:0;padding:0}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brandMark">AA</div>
+    <div class="brandText">
+      <b>Answer Arizona</b>
+      <span>Standard Operating Procedure</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">SOP · Module 24 Reference</div>
+    <h1>Cross Talk</h1>
+    <p class="lead">Recognition, escalation, and phone reset response.</p>
+
+    <div class="meta">
+      <div><strong>SOP Topic</strong>Cross Talk</div>
+      <div><strong>Training Source</strong>Module 24</div>
+      <div><strong>Applies To</strong>Answer Arizona Operators</div>
+      <div><strong>Primary Systems</strong>PRISM PHONES, 3CX or landline, Spectrum Agent</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>1. Purpose</h2>
+    <p>To provide a consistent response when an operator experiences <strong>cross talk</strong> — the unusual situation in which the operator can hear another operator's call through the phone system. The procedure identifies whether the issue is isolated to one station, escalates a continuing problem appropriately, prepares the team for a PRISM PHONES reset, and prevents an incorrect reset of Spectrum Agent.</p>
+  </section>
+
+  <section class="card">
+    <h2>2. Key Rule</h2>
+    <div class="warning">
+      <strong>DO NOT RESET THE SPECTRUM AGENT PROGRAM.</strong><br>
+      A PRISM PHONES reset is for the phone lines. After the reset, reset only the phone connection — the 3CX phone or landline.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>3. Procedure</h2>
+    <div class="steps">
+      <div class="step"><div class="stepNum">1</div><div><b>Recognize cross talk.</b><br>If you can hear another operator's conversation through the phone system, treat the situation as cross talk.</div></div>
+      <div class="step"><div class="stepNum">2</div><div><b>Inform your teammates.</b><br>Let the team know that cross talk is occurring. The issue can affect the whole team, especially if a PRISM PHONES reset becomes necessary.</div></div>
+      <div class="step"><div class="stepNum">3</div><div><b>Change stations first.</b><br>Move to another station using Answer Arizona's approved station-changing method. Cross talk may be isolated to one station.</div></div>
+      <div class="step"><div class="stepNum">4</div><div><b>Listen after changing stations.</b><br>If the cross talk is gone, continue working normally. If you still hear another operator's call, continue to Step 5.</div></div>
+      <div class="step"><div class="stepNum">5</div><div><b>Contact Ilene, Eliza, or TD.</b><br>Request a <strong>PRISM PHONES reset</strong>. Do not substitute a Spectrum Agent reset.</div></div>
+      <div class="step"><div class="stepNum">6</div><div><b>Expect the system-wide reset effects.</b><br>Everyone will hear a beep. Active calls and callers waiting in the queue will be disconnected.</div></div>
+      <div class="step"><div class="stepNum">7</div><div><b>Reconnect/reset the phone connection only.</b><br>After the PRISM PHONES reset, reset the applicable <strong>3CX phone or landline</strong> connection. Do not reset Spectrum Agent.</div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>4. Quick Decision Flow</h2>
+    <div class="flow">
+      <div class="flowBox">Hear Cross Talk</div><div class="arrow">→</div>
+      <div class="flowBox">Change Stations</div><div class="arrow">→</div>
+      <div class="flowBox">Cross Talk Gone?</div><div class="arrow">→</div>
+      <div class="flowBox">If No: Contact Ilene / Eliza / TD</div><div class="arrow">→</div>
+      <div class="flowBox">PRISM PHONES Reset</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>5. What to Expect During a PRISM PHONES Reset</h2>
+    <table>
+      <thead><tr><th>Event</th><th>Expected Result</th></tr></thead>
+      <tbody>
+        <tr><td>Beep</td><td>Everyone will hear a beep.</td></tr>
+        <tr><td>Active calls</td><td>Active calls will be disconnected.</td></tr>
+        <tr><td>Callers in queue</td><td>Callers waiting in the queue will also be disconnected.</td></tr>
+        <tr><td>After reset</td><td>Reset/reconnect only the 3CX phone or landline connection. Do not reset Spectrum Agent.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>6. Team Communication Standard</h2>
+    <p>Cross talk is a team issue, not only an individual operator issue. Inform teammates when cross talk is occurring so they understand what is happening and are prepared if a PRISM PHONES reset produces a beep and disconnects calls.</p>
+    <p>The operator should recognize the issue, communicate it to the team, follow the troubleshooting sequence, escalate it to the appropriate people, and avoid resetting the wrong system.</p>
+  </section>
+
+  <section class="card">
+    <h2>7. Do / Do Not Reference</h2>
+    <table>
+      <thead>
+        <tr><th class="doHead">DO</th><th class="dontHead">DO NOT</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="doCell">Change stations first.</td><td class="dontCell">Reset Spectrum Agent.</td></tr>
+        <tr><td class="doCell">Inform your teammates.</td><td class="dontCell">Ignore cross talk and continue without reporting it.</td></tr>
+        <tr><td class="doCell">If it continues, contact Ilene, Eliza, or TD for a PRISM PHONES reset.</td><td class="dontCell">Keep switching stations indefinitely instead of escalating.</td></tr>
+        <tr><td class="doCell">After the reset, reset only the 3CX phone or landline connection.</td><td class="dontCell">Confuse the phone-line reset with a Spectrum Agent reset.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>8. Quick Memory Check</h2>
+    <div class="memory">
+      <strong>First:</strong> Change stations.<br>
+      <strong>If it continues:</strong> Inform the team and contact Ilene, Eliza, or TD for a PRISM PHONES reset.<br>
+      <strong>During reset:</strong> Expect a beep and call disconnections.<br>
+      <strong>After reset:</strong> Reset the phone connection only — never Spectrum Agent.
+    </div>
+  </section>
+
+  <div class="footer">
+    Answer Arizona · Standard Operating Procedure · Cross Talk
+  </div>
+</main>
+</body>
+</html>
